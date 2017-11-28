@@ -20,25 +20,31 @@
   <script src="libs/slickcircular/js/jquery.throttle.js"></script>
   <link href="libs/slickcircular/css/jquery.classycountdown.css" rel="stylesheet">
   <script src="libs/slickcircular/js/jquery.classycountdown.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 </head>
 <body>
   
 
 
 <!-- Always shows a header, even in smaller screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header"> 
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title">Kottans stats</span>
+      <span class="mdl-layout-title"> 
+        <img src="https://avatars-02.gitter.im/group/iv/3/57542d27c43b8c601977a0b6?s=48" class="img-logo"> 
+        <span style="color: crimson;">pc</span>
+        <span style="color: rgb(79, 206, 79);">(master *)</span>
+        <span style="color: yellow;">kottans-stats $</span>
+      </span>
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only"> 
-          
-        <a class="mdl-navigation__link" href="">Refresh</a>
-        <a class="mdl-navigation__link" href="">Repository</a>
-        <a class="mdl-navigation__link" href="">Twitter</a>
+          <a class="mdl-navigation__link" target="_blank" href="https://gitter.im/Kottans/frontend?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge"><img class="gitter-icon" src="http://cdn02.gitter.im/_s/708c5ff/images/favicon-unread.ico"> Gitter chat</a>
+          <a class="mdl-navigation__link" target="_blank" href="https://github.com/kottans/frontend"><img src="https://png.icons8.com/github/androidL/30/000000"> Github repository</a>
+          <a class="mdl-navigation__link" target="_blank" href="https://twitter.com/kottans_org"><img src="https://png.icons8.com/twitter/androidL/30/000000"> Kottans on Twitter</a>
       </nav>
     </div>
     <!-- Tabs -->
@@ -49,14 +55,15 @@
       </div>
   </header>
   <div class="mdl-layout__drawer "> <!-- mdl-layout--small-screen-only -->
-    <span class="mdl-layout-title">Kottans stats</span>
+    <span class="mdl-layout-title">Kottans/frontend</span>
     <div class="avatar">
         <img id="main-logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/234228/cat.jpg" alt="Kaptain Kitty" class="avatar-img">
     </div>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Refresh</a>
-      <a class="mdl-navigation__link" href="">Repository</a>
-      <a class="mdl-navigation__link" href="">Twitter</a>
+      <a class="mdl-navigation__link" target="_blank" href="https://gitter.im/Kottans/frontend?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge"><img class="gitter-icon" src="http://cdn02.gitter.im/_s/708c5ff/images/favicon-unread.ico"> Gitter chat</a>
+      <a class="mdl-navigation__link" target="_blank" href="https://github.com/kottans/frontend"><img src="https://png.icons8.com/github/androidL/30/000000"> Github repository</a>
+      <a class="mdl-navigation__link" target="_blank" href="https://twitter.com/kottans_org"><img src="https://png.icons8.com/twitter/androidL/30/000000"> Kottans on Twitter</a>
+     
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -74,7 +81,9 @@
           </section>
           <section class="mdl-layout__tab-panel is-active" id="scroll-tab-3">
             <div class="page-content"><!-- Your content goes here -->
-              <!-- <h3>Statistics</h3> -->
+              <div id="countdown-container">
+                  <span class="countdown-description">Course will begin 10 january 2018<br><br></span>
+              </div>
 
               <div class="features">
                 <div class="features-item">
@@ -113,14 +122,16 @@
                     </span>
                 </div>
               </div>
-              <div id="countdown-container"><span class="countdown-description">Course will begin 10 january 2018<br><br></span></div>
-              <center><a target="_blank" href="https://github.com/kottans/frontend" class="started mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                  GET STARTED! <i class="material-icons">play_arrow</i>
-              </a></center>
               
-            <div id="chart_div" style="width: 100%;"></div>
+              <center>
+                <a target="_blank" href="https://github.com/kottans/frontend" class="started mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                  GET STARTED! <i class="material-icons">play_arrow</i>
+                </a>
+              </center>
+              
+            <!-- <div id="chart_div" style="width: 100%;"></div>
               <div id="piechart"></div>
-              <div id="vertical_chart" style="margin-bottom: 200px; height: 800px;"></div>
+              <div id="vertical_chart" style="margin-bottom: 200px; height: 800px;"></div> -->
               <!-- <div id="series_chart_div"></div> -->
             </div>
             
@@ -133,8 +144,13 @@
     
     </div>
   
+    
   </main>
+  
+        
+        
 </div>
+
 
 
 

@@ -1,6 +1,6 @@
 var timeEnd = Math.round( (new Date("2018.01.10").getTime() - $.now()) / 1000);
 timeEnd = Math.floor(timeEnd / 86400) * 86400
-console.log(timeEnd);
+//console.log(timeEnd);
 
 //slickcitcular https://www.jqueryscript.net/demo/Slick-Circular-jQuery-Countdown-Plugin-Classy-Countdown/
 $('#countdown-container').ClassyCountdown({

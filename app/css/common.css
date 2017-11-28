@@ -8,22 +8,35 @@ body {
 .mdl-layout__container {
   top: 0;
 }
-
+.mdl-layout__drawer>.mdl-layout-title {
+  text-align: center;
+}
+.mdl-layout__drawer>.mdl-layout-title, .mdl-layout-title {
+  padding-left: 0px;
+  font-family: 'Inconsolata', monospace;
+}
+.gitter-icon {
+  width: 25px;
+  margin-right: 2px;
+}
+.mdl-navigation__link:hover {
+  color: rgb(240, 232, 232);
+}
 .mdl-data-table td,.mdl-data-table th {
   text-align: inherit;
 }
 
 .avatar {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   margin: 0 auto 2em;
 }
 
 .avatar-img {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   margin: 0 auto;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 
 .drawer-text {
@@ -48,11 +61,11 @@ body {
   
 }
 .features-item {
-  border: 1px solid #DCE6EB;
+  border: 2px solid rgba(220, 230, 235, 0.76);
   padding: 20px;
   position: relative;
   width: 180px;
-  border-radius: 3px;
+  border-radius: 4px;
   height: 90px;
   text-align: right;
 }
@@ -90,7 +103,7 @@ button.started i {
 
 #countdown-container {
   width: 50%;
-  margin: 50px auto 10px;
+  margin: 25px auto 10px;
   text-align: center;
   position: relative;
 }
@@ -99,6 +112,7 @@ button.started i {
   text-transform: uppercase;
   /* margin: 30px; */
 } 
+
 @media screen and (max-width: 1000px) {
   .features-item {
       background-color: lightgreen;

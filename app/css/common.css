@@ -1,0 +1,105 @@
+/* -- import Roboto Font ---------------------------- */
+@import "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,cyrillic";
+
+body {
+  font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
+}
+
+.mdl-layout__container {
+  top: 0;
+}
+
+.mdl-data-table td,.mdl-data-table th {
+  text-align: inherit;
+}
+
+.avatar {
+  height: 200px;
+  width: 200px;
+  margin: 0 auto 2em;
+}
+
+.avatar-img {
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.drawer-text {
+  padding: 1em;
+  text-align: center;
+}
+
+.kitty-wiggle-full {
+  background-image: url(../assets/kitty-wiggle-full.gif); 
+  background-size: cover;
+  width: 100vw;
+  height: 40vw;
+  background-position: center;
+  margin: 0 auto;
+
+}
+
+.features {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content : space-around;
+  
+}
+.features-item {
+  border: 1px solid #DCE6EB;
+  padding: 20px;
+  position: relative;
+  width: 180px;
+  border-radius: 3px;
+  height: 90px;
+  text-align: right;
+}
+.features-item .count {
+  font-size: 35px;
+  float: right;
+}
+.features-item .text {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1.1em;
+}
+.features-item .description {
+  font-size: 0.8em;
+}
+
+.features-item .icon img {
+  float: left;
+}
+
+a.started {
+  position: relative;
+  margin: 20px;
+  padding: 15px 40px;
+ 
+}
+
+button.started i {
+  position: absolute; 
+  top: 30%;
+  right: 10px;
+  width: 40px;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .features-item {
+      background-color: lightgreen;
+      margin: 10px;
+      width: 30%;
+  }
+  .features {
+    flex-wrap: wrap;
+  }
+
+}
+@media screen and (max-width: 800px) {
+  width: 90%;
+}

@@ -1,0 +1,10 @@
+ClassyCountdown is a jQuery plugin that allows you to easily create clean circular
+countdowns. It is fully customizable and includes 12 presets, which can be modified
+and it uses HTML5 canvas for rendering the circles.
+
+@name ClassyCountdown
+@package jQuery plugin
+@author Marius Stanciu - Sergiu <marius@class.pm>
+@website http://www.class.pm/
+@version 1.0.0
+@license MIT www.class.pm/LICENSE-MIT

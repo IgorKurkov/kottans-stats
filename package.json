@@ -1,0 +1,15 @@
+{
+  "name": "kottans-stats",
+  "version": "1.0.0",
+  "description": "for fun and stats",
+  "main": "codepen.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1"
+  }
+}

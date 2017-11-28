@@ -88,7 +88,17 @@ button.started i {
   width: 40px;
 }
 
-
+#countdown-container {
+  width: 50%;
+  margin: 50px auto 10px;
+  text-align: center;
+  position: relative;
+}
+#countdown-container .countdown-description {
+  font-size: 30px;
+  text-transform: uppercase;
+  /* margin: 30px; */
+} 
 @media screen and (max-width: 1000px) {
   .features-item {
       background-color: lightgreen;
@@ -101,5 +111,7 @@ button.started i {
 
 }
 @media screen and (max-width: 800px) {
-  width: 90%;
+  #countdown-container {
+    width: 100%;
+  }
 }

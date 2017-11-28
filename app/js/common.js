@@ -230,6 +230,9 @@ $('.count').each(function () {
       }
   });
 });
+var timeEnd = Math.round( (new Date("2018.01.10").getTime() - $.now()) / 1000);
+    timeEnd = Math.floor(timeEnd / 86400) * 86400
+    console.log(timeEnd);
 
 //slickcitcular https://www.jqueryscript.net/demo/Slick-Circular-jQuery-Countdown-Plugin-Classy-Countdown/
 $('#countdown-container').ClassyCountdown({
@@ -238,14 +241,12 @@ $('#countdown-container').ClassyCountdown({
   // black-black, white, white-wide, 
   // white-very-wide or white-black
   theme: "white", 
-  
   // end time
-  end: $.now() + 645600,
+  end: $.now() + timeEnd, ////end: $.now() + 645600,
   now: $.now(),
   
   // whether to display the days/hours/minutes/seconds labels.
   labels: true,
-  
   // object that specifies different language phrases for says/hours/minutes/seconds as well as specific CSS styles.
   labelsOptions: {
     lang: {
@@ -261,8 +262,7 @@ $('#countdown-container').ClassyCountdown({
   style: {
     element: '',
     labels: false,
-    text: '<a href="https://www.jqueryscript.net/tags.php?/Responsive/">Responsive</a>',
-    // : 0.5,
+
     days: {
       gauge: {
         thickness: 0.02,

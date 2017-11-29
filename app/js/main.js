@@ -203,8 +203,8 @@ function drawTimelineChart (graphArr) {
     dataTable.addColumn({ type: 'date', id: 'End' });
     dataTable.addRows(graphArr);
     var options = {
-      //width: $(window).width()*0.95,
-      //height: $(window).height()*0.96,
+      //width: $(window).width(),
+      //height: $(window).height(),
       timeline: { colorByRowLabel: true },
       hAxis: {
           minValue: new Date(2017, 9, 29),

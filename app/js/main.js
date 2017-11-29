@@ -34,9 +34,12 @@ function fetchAllMessages(oldestMessageId) {
       fetchAllMessages(oldestMessageId); // fetch again
     } 
     else {
-      var finishedArr = filterFinishedMessages (buildMessagesArr (data));
+      var messagesArr = buildMessagesArr (data);
+      var finishedArr = filterFinishedMessages (messagesArr);
+      var activityArr = buildActivityArrOfChattingByDay (messagesArr);
       users = extractActiveUsersFromFinishedArr (finishedArr);
-      insertTaskListToPage (finishedArr);
+      insertTaskListToPage (finishedArr); //void
+
       drawTimelineChart (buildTimelineGraphArr (finishedArr, users));
       drawVerticalBarChart (buildSumOfTasksByUserGraphArr (users));
     }
@@ -75,29 +78,12 @@ function buildMessagesArr(data) {
   return messagesArr;
 }
 
-function buildActivityOfChattingByDay (messagesArr) {
-  messagesArr.sort((a, b)=> { 
-    a = new Date(a.sent).getTime();
-    b = new Date(b.sent).getTime();
-    return a > b ? 1 : a < b ? -1 : 0;
-  }).reverse();
-
-  var activityArr = [];
-  for (var i = 0; i < messagesArr.length; i++) {
-    var obj = messagesArr[i];
-      var startTime = new Date(Date.parse(obj.sent));   
-      var user = users.find((user) => { return user.displayName == obj.displayName });
-
-      activityArr[i] = [`${obj.displayName}`];    
-  }
-  return activityArr;
-  }
-
 function filterFinishedMessages(messagesArr) {
   return finishedArr = messagesArr.filter((obj) => { 
     return obj.finished == true && obj.displayName != "zonzujiro"; 
   });
 };
+
 
 function User(displayName, username, avatarUrl, lessons) {
   this.displayName = displayName;
@@ -126,6 +112,35 @@ function extractActiveUsersFromFinishedArr (finishedArr) {
 }
 
 
+// function Day(dayTimestamp, messageCounter) {
+//   this.dayTimestamp = dayTimestamp;
+//   this.messageCounter = messageCounter || 0;
+//   //this.date = new Date(dayTimestamp);
+// };
+
+function buildActivityArrOfChattingByDay (messagesArr) {
+  messagesArr.sort((a, b)=> { 
+    a = new Date(a.sent).getTime();
+    b = new Date(b.sent).getTime();
+    return a > b ? 1 : a < b ? -1 : 0;
+  }).reverse();
+
+  var activityArr = [];
+  for (var i = 0; i < messagesArr.length; i++) {
+    var sent = new Date(messagesArr[i].sent);
+    var yyyymmdd = sent.getFullYear() +"-"+ ("0"+ (sent.getMonth() + 1)).slice(-2) +"-"+ ("0"+ sent.getDate()).slice(-2);
+    var currentDayTimestamp = new Date(yyyymmdd).getTime();
+    var existDay = activityArr.find((day) => day[0] == currentDayTimestamp);
+
+    if(existDay != undefined) { 
+      existDay[1]++;
+    } else {
+      activityArr.push( [currentDayTimestamp, 1 ] );
+    }
+  } 
+  //console.log(activityArr)
+  return activityArr;
+}
 
 function insertTaskListToPage(finishedArr) {
   var imageLogo = document.getElementById('main-logo');

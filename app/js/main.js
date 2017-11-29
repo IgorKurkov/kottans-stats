@@ -120,22 +120,14 @@ function buildActivityArrOfChattingByDay (messagesArr) {
     b = new Date(b.sent).getTime();
     return a > b ? 1 : a < b ? -1 : 0;
   }).reverse();
-
   var activityArr = [];
   for (var i = 0; i < messagesArr.length; i++) {
     var sent = new Date(messagesArr[i].sent);
-    var yyyymmdd = new Date((sent.getFullYear() +"-"+ ("0"+ (sent.getMonth() + 1)).slice(-2) +"-"+ ("0"+ sent.getDate()).slice(-2)));
-    //var currentDayTimestamp = new Date(yyyymmdd).getTime();
-    var existDay = activityArr.find((day) => day[0].getDate() == yyyymmdd.getDate());
-
-    if(existDay != undefined) { 
-      existDay[1]++;
-    } else {
-      activityArr.push( [ yyyymmdd, 1 ] );
-    }
+    var existDay = activityArr.find((day) => day[0].getDate() == sent.getDate() && day[0].getMonth() == sent.getMonth());
+    (existDay != undefined) ? existDay[1]++ : activityArr.push( [sent, 1] );
   } 
-  //console.log(activityArr)
-  return activityArr;
+  
+  return activityArr.filter((day) => { return day[0].getMonth() != 8 }); //cut two first messages from september
 }
 
 function insertTaskListToPage(finishedArr) {
@@ -179,8 +171,8 @@ function buildTimelineGraphArr(finishedArr, users) {
   var graphArr = [];
   for (var i = 0; i < finishedArr.length; i++) {
     var obj = finishedArr[i];
-      var startTime = new Date(Date.parse(obj.sent));   
-      var endTime = new Date(new Date(Date.parse(obj.sent)).getTime() + (1 * 60 * 60 * 20000));
+      var startTime = new Date(obj.sent);   
+      var endTime = new Date(new Date(obj.sent).getTime() + (1 * 60 * 60 * 20000));
       var user = users.find((user) => { return user.displayName == obj.displayName });
 
       graphArr[i] = [`${obj.displayName} (${user.lessons.length})`, obj.lesson+"", startTime, endTime];    
@@ -211,9 +203,11 @@ function drawTimelineChart (graphArr) {
     dataTable.addColumn({ type: 'date', id: 'End' });
     dataTable.addRows(graphArr);
     var options = {
+      //width: $(window).width()*0.95,
+      //height: $(window).height()*0.96,
       timeline: { colorByRowLabel: true },
       hAxis: {
-          minValue: new Date(2017, 10, 1),
+          minValue: new Date(2017, 9, 29),
           maxValue: new Date(new Date().getTime() + (1 * 60 * 60 * 100000))
       }
     };
@@ -231,17 +225,24 @@ function drawVerticalBarChart (graphArr) {
     //document.getElementById('debug').innerHTML = JSON.stringify(graphArr);
     var data = google.visualization.arrayToDataTable(graphArr);
   var options = {
+    animation: {
+      duration: 2000,
+      startup: true //This is the new option
+    },
     title: 'Bar of finished tasks by each user',
     width: $(window).width()*0.49,
-    height: $(window).height()*0.4,
+    height: $(window).height()*0.45,
     hAxis: {
-      title: 'Users', 
       slantedText:true,
       slantedTextAngle:90,        
     },
     vAxis: {
       //title: 'Sum of finished tasks'
-    }
+    },
+    animation:{
+      duration: 1000,
+      easing: 'out'
+    },
   };
   chart.draw(data, options);
   }
@@ -257,13 +258,20 @@ function drawActivityLineChart (activityArr) {
     data.addColumn('number', 'Messages');
     data.addRows(activityArr);
     var options = {
+      title: "Activity of users in chat",
+      animation: {
+        duration: 2000,
+        startup: true //This is the new option
+      },
+      //curveType: 'function',
       width: $(window).width()*0.49,
-      height: $(window).height()*0.4,
+      height: $(window).height()*0.45,
       hAxis: {
-        title: 'Time'
+        slantedText:true,
+        slantedTextAngle:45,
       },
       vAxis: {
-        title: 'Popularity'
+        // title: 'Count of messa'
       }
     };
     var chart = new google.visualization.LineChart(document.getElementById('linechart'));

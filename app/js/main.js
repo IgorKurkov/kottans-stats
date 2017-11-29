@@ -55,10 +55,11 @@ fetchAllMessages(oldestMessageId);
 
 function buildMessagesArr(data) {
   var messagesArr = [];
+  console.log(data)
   for (var i = 0; i < data.length; i++) {
     var croppedData = data[i];
     var regexFinished = /finished/;
-    var regexlessonsName = /Website Performance Optimization|server and http tools|CSS Basics|HTML5 and CSS|Object Oriented JS|Intro to JS|Offline Web|Pair Game|Intro to HTML & CSS|task 2|Task 1|Web Design/ig;
+    var regexlessonsName = /Website Performance|server and http tools|CSS Basics|HTML5 and CSS|Object Oriented JS|Intro to JS|Offline Web|Pair Game|Intro to HTML & CSS|task 2|Task 1|Web Design/ig;
     var sent = new Date(croppedData["sent"]); // 2017-11-17T14:01:46.906Z
     var dateSentFormatted = sent.getFullYear() +"."+ 
       ("0"+ (sent.getMonth() + 1)).slice(-2) +"."+ 
@@ -79,6 +80,7 @@ function buildMessagesArr(data) {
         sent : dateSentFormatted 
     };
   }
+  console.log(messagesArr)
   return messagesArr;
 }
 
@@ -102,8 +104,8 @@ function insertValuesToFeaturesCards (messagesArr) {
   document.getElementsByClassName("active-users")[0].innerHTML = getAllUsersOfChat(messagesArr).length;
   // feature 4
   getSingleRequest("https://api.github.com/search/issues?q=+type:pr+user:kottans&sort=created&%E2%80%8C%E2%80%8Border=asc", (data) => {
-    var url = data.items.find((item) => {return item.repository_url == "https://api.github.com/repos/kottans/mock-repo";});
-    document.getElementsByClassName("pull-requests")[0].innerHTML = url.number;
+    var pullNumber = data.items.find((item) => {return item.repository_url == "https://api.github.com/repos/kottans/mock-repo";});
+    document.getElementsByClassName("pull-requests")[0].innerHTML = pullNumber.number;
   });
   // feature 5
   var learners = extractActiveUsersFromFinishedArr (finishedArr).length;
@@ -231,7 +233,7 @@ function buildTimelineGraphArr(finishedArr, users) {
 function buildSumOfTasksByUserGraphArr(users) {
   var graphArr = [];
   for (var i = 0; i < users.length; i++) {
-      graphArr[i] = new Array(users[i].username+"", users[i].lessons.length, "blue");    
+      graphArr[i] = new Array(users[i].username+"", users[i].lessons.length, "lightblue");    
   }
   return graphArr;
 }

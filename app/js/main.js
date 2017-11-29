@@ -43,7 +43,7 @@ function fetchAllMessages(oldestMessageId) {
   })
   .catch(alert);
 }
-//fetchAllMessages(oldestMessageId); 
+fetchAllMessages(oldestMessageId); 
 
 
 function buildMessagesArr(data) {
@@ -75,6 +75,23 @@ function buildMessagesArr(data) {
   return messagesArr;
 }
 
+function buildActivityOfChattingByDay (messagesArr) {
+  messagesArr.sort((a, b)=> { 
+    a = new Date(a.sent).getTime();
+    b = new Date(b.sent).getTime();
+    return a > b ? 1 : a < b ? -1 : 0;
+  }).reverse();
+
+  var activityArr = [];
+  for (var i = 0; i < messagesArr.length; i++) {
+    var obj = messagesArr[i];
+      var startTime = new Date(Date.parse(obj.sent));   
+      var user = users.find((user) => { return user.displayName == obj.displayName });
+
+      activityArr[i] = [`${obj.displayName}`];    
+  }
+  return activityArr;
+  }
 
 function filterFinishedMessages(messagesArr) {
   return finishedArr = messagesArr.filter((obj) => { 
@@ -107,6 +124,7 @@ function extractActiveUsersFromFinishedArr (finishedArr) {
   } 
   return usersArr;
 }
+
 
 
 function insertTaskListToPage(finishedArr) {
@@ -167,6 +185,8 @@ function buildSumOfTasksByUserGraphArr(users) {
   return graphArr;
 }
 
+
+
 function drawTimelineChart (graphArr) {
   google.charts.load("current", {packages:["timeline"]});
   google.charts.setOnLoadCallback(drawChart);
@@ -181,7 +201,6 @@ function drawTimelineChart (graphArr) {
     dataTable.addRows(graphArr);
     var options = {
       timeline: { colorByRowLabel: true },
-      // timeline: { showRowLabels: false },
       hAxis: {
           minValue: new Date(2017, 10, 1),
           maxValue: new Date(new Date().getTime() + (1 * 60 * 60 * 100000))
@@ -201,11 +220,9 @@ function drawVerticalBarChart (graphArr) {
     //document.getElementById('debug').innerHTML = JSON.stringify(graphArr);
     var data = google.visualization.arrayToDataTable(graphArr);
   var options = {
-    // colorAxis: {colors: ['yellow', 'red']},
     title: 'Bar of finished tasks by each user',
     width: $(window).width(),
     height: $(window).height()*0.75,
-    // chartArea: {width: '40%'},
     hAxis: {
       title: 'Users', 
       slantedText:true,

@@ -4,7 +4,11 @@
 body {
   font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
 }
-
+.user-icon {
+  width: 30px;
+  border-radius: 50%;
+  margin-right:5px;
+}
 .mdl-layout__container {
   top: 0;
 }
@@ -24,6 +28,7 @@ body {
 }
 .mdl-data-table td,.mdl-data-table th {
   text-align: inherit;
+  padding: 0 5px;
 }
 
 .avatar {
@@ -125,8 +130,11 @@ button.started i {
   }
 
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 400px) {
   #countdown-container {
+    width: 100%;
+  }
+  .features-item {
     width: 100%;
   }
 }

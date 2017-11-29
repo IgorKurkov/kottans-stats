@@ -193,22 +193,18 @@ function insertTaskListToPage(finishedArr) {
   var divTable = document.getElementById('myTable');
       divTable.innerHTML += 
       `<tr class="header">
-         <th>№</th>
-         <th onclick="sortTable(1)" style="width:10%;">Name</th>
-         <td onclick="sortTable(2)" >Username</td>
-         <th onclick="sortTable(3)" style="width:10%;">Published</th>
-         <th style="width:90%;">Text</th>
+         <th style="width:5%;">№</th>
+         <th onclick="sortTable(1)" style="width:5%;">Name</th>
+         <th onclick="sortTable(2)" style="width:5%;">Nick</th>
+         <th onclick="sortTable(3)" style="width:5%;">Published</th>
+         <th style="width:80%;">Text</th>
       </tr>`;
         
   for (var i = 0; i < finishedArr.length; i++) {
-    // var sent = new Date(finishedArr[i].sent);
-    // var dateSentFormatted = 
-    //   sent.getFullYear() +"."+ ("0"+ (sent.getMonth() + 1)).slice(-2) +"."+ 
-    //   ("0"+ sent.getDate()).slice(-2) +" "+ sent.getHours() +":"+ sent.getMinutes();
     divTable.innerHTML += 
         `<tr>
           <td>${i+1}</td>
-          <td>${finishedArr[i].displayName}</td>
+          <td><img src="${finishedArr[i].avatarUrl}" class="user-icon">${finishedArr[i].displayName}</td>
           <td>(${finishedArr[i].username})</td>
           <td>${finishedArr[i].sent}</td>
           <td>${finishedArr[i].text} </td>

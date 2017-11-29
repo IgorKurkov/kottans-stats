@@ -37,11 +37,14 @@ function fetchAllMessages(oldestMessageId) {
       var messagesArr = buildMessagesArr (data);
       var finishedArr = filterFinishedMessages (messagesArr);
       var activityArr = buildActivityArrOfChattingByDay (messagesArr);
+      
       users = extractActiveUsersFromFinishedArr (finishedArr);
       insertTaskListToPage (finishedArr); //void
 
       drawTimelineChart (buildTimelineGraphArr (finishedArr, users));
       drawVerticalBarChart (buildSumOfTasksByUserGraphArr (users));
+      drawActivityLineChart (activityArr);
+      // highchartsLineChart (activityArr);
     }
   })
   .catch(alert);
@@ -54,7 +57,7 @@ function buildMessagesArr(data) {
   for (var i = 0; i < data.length; i++) {
     var croppedData = data[i];
     var regexFinished = /finished/;
-    var regexlessonsName = /server and http tools|CSS Basics|HTML5 and CSS|Object Oriented JS|Intro to JS|Offline Web|Pair Game|Intro to HTML & CSS|task 2|Task 1|Web Design/ig;
+    var regexlessonsName = /Website Performance Optimization|server and http tools|CSS Basics|HTML5 and CSS|Object Oriented JS|Intro to JS|Offline Web|Pair Game|Intro to HTML & CSS|task 2|Task 1|Web Design/ig;
     var sent = new Date(croppedData["sent"]); // 2017-11-17T14:01:46.906Z
     var dateSentFormatted = sent.getFullYear() +"."+ 
       ("0"+ (sent.getMonth() + 1)).slice(-2) +"."+ 
@@ -111,13 +114,6 @@ function extractActiveUsersFromFinishedArr (finishedArr) {
   return usersArr;
 }
 
-
-// function Day(dayTimestamp, messageCounter) {
-//   this.dayTimestamp = dayTimestamp;
-//   this.messageCounter = messageCounter || 0;
-//   //this.date = new Date(dayTimestamp);
-// };
-
 function buildActivityArrOfChattingByDay (messagesArr) {
   messagesArr.sort((a, b)=> { 
     a = new Date(a.sent).getTime();
@@ -128,14 +124,14 @@ function buildActivityArrOfChattingByDay (messagesArr) {
   var activityArr = [];
   for (var i = 0; i < messagesArr.length; i++) {
     var sent = new Date(messagesArr[i].sent);
-    var yyyymmdd = sent.getFullYear() +"-"+ ("0"+ (sent.getMonth() + 1)).slice(-2) +"-"+ ("0"+ sent.getDate()).slice(-2);
-    var currentDayTimestamp = new Date(yyyymmdd).getTime();
-    var existDay = activityArr.find((day) => day[0] == currentDayTimestamp);
+    var yyyymmdd = new Date((sent.getFullYear() +"-"+ ("0"+ (sent.getMonth() + 1)).slice(-2) +"-"+ ("0"+ sent.getDate()).slice(-2)));
+    //var currentDayTimestamp = new Date(yyyymmdd).getTime();
+    var existDay = activityArr.find((day) => day[0].getDate() == yyyymmdd.getDate());
 
     if(existDay != undefined) { 
       existDay[1]++;
     } else {
-      activityArr.push( [currentDayTimestamp, 1 ] );
+      activityArr.push( [ yyyymmdd, 1 ] );
     }
   } 
   //console.log(activityArr)
@@ -236,19 +232,44 @@ function drawVerticalBarChart (graphArr) {
     var data = google.visualization.arrayToDataTable(graphArr);
   var options = {
     title: 'Bar of finished tasks by each user',
-    width: $(window).width(),
-    height: $(window).height()*0.75,
+    width: $(window).width()*0.49,
+    height: $(window).height()*0.4,
     hAxis: {
       title: 'Users', 
       slantedText:true,
       slantedTextAngle:90,        
     },
     vAxis: {
-      title: 'Sum of finished tasks'
+      //title: 'Sum of finished tasks'
     }
   };
   chart.draw(data, options);
   }
 } 
+
+function drawActivityLineChart (activityArr) {
+  google.charts.load('current', {packages: ['corechart', 'line']});
+  google.charts.setOnLoadCallback(drawBasic);
+
+  function drawBasic() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('date', 'Days');
+    data.addColumn('number', 'Messages');
+    data.addRows(activityArr);
+    var options = {
+      width: $(window).width()*0.49,
+      height: $(window).height()*0.4,
+      hAxis: {
+        title: 'Time'
+      },
+      vAxis: {
+        title: 'Popularity'
+      }
+    };
+    var chart = new google.visualization.LineChart(document.getElementById('linechart'));
+    chart.draw(data, options);
+  }
+}
+
 
 

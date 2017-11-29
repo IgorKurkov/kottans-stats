@@ -249,8 +249,6 @@ function drawTimelineChart (graphArr) {
     dataTable.addColumn({ type: 'date', id: 'End' });
     dataTable.addRows(graphArr);
     var options = {
-      //width: $(window).width(),
-      //height: $(window).height(),
       timeline: { colorByRowLabel: true },
       hAxis: {
           minValue: new Date(2017, 9, 29),
@@ -275,8 +273,8 @@ function drawVerticalBarChart (graphArr) {
       duration: 2000,
       startup: true //This is the new option
     },
-    title: 'Bar of finished tasks by each user',
-    width: $(window).width()*0.49,
+    title: 'Sum of finished tasks by each learner',
+    width: ($(window).width() < 800) ? $(window).width() : $(window).width()*0.5,
     height: $(window).height()*0.45,
     hAxis: {
       slantedText:true,
@@ -310,7 +308,7 @@ function drawActivityLineChart (activityArr) {
         startup: true //This is the new option
       },
       //curveType: 'function',
-      width: $(window).width()*0.49,
+      width: ($(window).width() < 800) ? $(window).width() : $(window).width()*0.5,
       height: $(window).height()*0.45,
       hAxis: {
         slantedText:true,

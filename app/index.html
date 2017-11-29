@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=0.9">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Kottans stats</title>
+
+  <meta name="theme-color" content="#3F51B5">
+  <meta name="msapplication-navbutton-color" content="#3F51B5">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#3F51B5">
 
   <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
   <!-- google charts  -->
@@ -38,7 +42,7 @@
       <span class="mdl-layout-title"> 
         <img src="https://avatars-02.gitter.im/group/iv/3/57542d27c43b8c601977a0b6?s=48" class="img-logo"> 
         <span style="color: crimson;">pc</span>
-        <span style="color: rgb(79, 206, 79);">(master *)</span>
+        <span style="color: rgb(79, 206, 79);">(master*)</span>
         <span style="color: yellow;">kottans-stats $</span>
       </span>
       <!-- Add spacer, to align navigation to the right -->
@@ -53,7 +57,7 @@
     <!-- Tabs -->
     <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
         <a href="#scroll-tab-1" class="mdl-layout__tab is-active">Timeline</a>
-        <a href="#scroll-tab-2" class="mdl-layout__tab">Finished tasks</a>
+        <a href="#scroll-tab-2" class="mdl-layout__tab">Finished</a>
         <a href="#scroll-tab-3" class="mdl-layout__tab ">Statistics</a>
       </div>
   </header>
@@ -71,7 +75,7 @@
   </div>
   <main class="mdl-layout__content">
       <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
-          <div class="page-content"><!-- Your content goes here -->
+          <div class="page-content"><!-- Your content goes here -->             
             <div id="timeline" style="width: 100%; height: 800px;"></div>
           </div>
         </section>
@@ -133,8 +137,11 @@
               </center>
 
               <!-- <div id="piechart"></div> -->
-              <div id="linechart" style="float: left;"></div>
-              <div id="vertical_chart" style="float: left;"></div> 
+              
+              <div class="chart-wrapper">
+                <div id="linechart"></div>
+                <div id="vertical_chart" ></div> 
+              </div>
               
             </div>
             

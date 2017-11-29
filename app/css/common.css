@@ -12,6 +12,13 @@ body {
 .mdl-layout__container {
   top: 0;
 }
+.mdl-layout__header-row {
+  height: 56px;
+  padding: 0 16px 0 42px;
+}
+.mdl-layout__tab-bar-button {
+  width: 0px;
+}
 .mdl-layout__drawer>.mdl-layout-title {
   text-align: center;
 }
@@ -26,8 +33,11 @@ body {
 .mdl-navigation__link:hover {
   color: rgb(240, 232, 232);
 }
-.mdl-data-table td,.mdl-data-table th {
+.mdl-data-table td, .mdl-data-table th {
   text-align: inherit;
+  
+}
+.mdl-data-table td {
   padding: 0 5px;
 }
 
@@ -119,6 +129,15 @@ button.started i {
   /* margin: 30px; */
 } 
 
+/* charts */
+.chart-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 370px;
+}
+
+
+
 @media screen and (max-width: 1000px) {
   .features-item {
       background-color: lightgreen;
@@ -137,4 +156,10 @@ button.started i {
   .features-item {
     width: 100%;
   }
+  .chart-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    /* height: 370px; */
+  }
+  
 }

@@ -69,15 +69,16 @@ function buildMessagesArr(data) {
 
     var matches = croppedData["text"].match(regexlessonsName);
     messagesArr[i] = {
-        lesson : (matches == null) ? "Unrecognised task" : matches,
-        finished : regexFinished.test(croppedData["text"]),
-        avatarUrl : croppedData.fromUser["avatarUrl"],
-        displayName : croppedData.fromUser["displayName"],
-        username : croppedData.fromUser["username"], 
-        gv : croppedData.fromUser["gv"],
-        v : croppedData.fromUser["v"],
-        text : croppedData["text"],
-        sent : dateSentFormatted 
+        lesson: (matches == null) ? "Unrecognised task" : matches,
+        finished: regexFinished.test(croppedData["text"]),
+        avatarUrl: croppedData.fromUser["avatarUrl"],
+        displayName: croppedData.fromUser["displayName"],
+        username: croppedData.fromUser["username"], 
+        gv: croppedData.fromUser["gv"],
+        v: croppedData.fromUser["v"],
+        text: croppedData["text"],
+        sent: dateSentFormatted,
+        url: croppedData.fromUser["url"]
     };
   }
   console.log(messagesArr)
@@ -193,7 +194,6 @@ function insertTaskListToPage(finishedArr) {
   var divTable = document.getElementById('myTable');
       divTable.innerHTML += 
       `<tr class="header">
-         <th style="width:5%;">№</th>
          <th onclick="sortTable(1)" style="width:5%;">Name</th>
          <th onclick="sortTable(2)" style="width:5%;">Nick</th>
          <th onclick="sortTable(3)" style="width:5%;">Published</th>
@@ -203,9 +203,8 @@ function insertTaskListToPage(finishedArr) {
   for (var i = 0; i < finishedArr.length; i++) {
     divTable.innerHTML += 
         `<tr>
-          <td>${i+1}</td>
           <td><img src="${finishedArr[i].avatarUrl}" class="user-icon">${finishedArr[i].displayName}</td>
-          <td>(${finishedArr[i].username})</td>
+          <td>(<a target="_blank" href="https://github.com${finishedArr[i].url}">${finishedArr[i].username}</a>)</td>
           <td>${finishedArr[i].sent}</td>
           <td>${finishedArr[i].text} </td>
         </tr>`;

@@ -72,6 +72,7 @@ body {
 .features-item .count {
   font-size: 35px;
   float: right;
+  transition: color 2s ease 0s;
 }
 .features-item .text {
   position: absolute;

@@ -19,7 +19,7 @@ function getAllRoomMessages(count, oldestId) {
   };  
 
 var data = [];
-var users;
+
 var oldestMessageId = null;
 
 function fetchAllMessages(oldestMessageId) {
@@ -34,22 +34,23 @@ function fetchAllMessages(oldestMessageId) {
       fetchAllMessages(oldestMessageId); // fetch again
     } 
     else {
-      var messagesArr = buildMessagesArr (data);
+      var messagesArr =  buildMessagesArr (data);
       var finishedArr = filterFinishedMessages (messagesArr);
       var activityArr = buildActivityArrOfChattingByDay (messagesArr);
       
-      users = extractActiveUsersFromFinishedArr (finishedArr);
+      var users = extractActiveUsersFromFinishedArr (finishedArr);
       insertTaskListToPage (finishedArr); //void
-
+      insertValuesToFeaturesCards (messagesArr); //void
+      
       drawTimelineChart (buildTimelineGraphArr (finishedArr, users));
       drawVerticalBarChart (buildSumOfTasksByUserGraphArr (users));
       drawActivityLineChart (activityArr);
-      // highchartsLineChart (activityArr);
     }
   })
   .catch(alert);
 }
 fetchAllMessages(oldestMessageId); 
+
 
 
 function buildMessagesArr(data) {
@@ -81,6 +82,34 @@ function buildMessagesArr(data) {
   return messagesArr;
 }
 
+function getSingleRequest(url, callback) {
+  fetch(url)
+  .then(function(response) {
+    return response.json();
+  })
+  .then( callback )
+  .catch(alert);
+}
+
+function insertValuesToFeaturesCards (messagesArr) {
+  // feature 1
+  document.getElementsByClassName("count-messages")[0].innerHTML = messagesArr.length;
+  // feature 2
+  getSingleRequest("http://api.github.com/repos/kottans/frontend", (data) => {
+    document.getElementsByClassName("starred-repo")[0].innerHTML = data.stargazers_count;
+  });
+  // feature 3
+  document.getElementsByClassName("active-users")[0].innerHTML = getAllUsersOfChat(messagesArr).length;
+  // feature 4
+  getSingleRequest("https://api.github.com/search/issues?q=+type:pr+user:kottans&sort=created&%E2%80%8C%E2%80%8Border=asc", (data) => {
+    var url = data.items.find((item) => {return item.repository_url == "https://api.github.com/repos/kottans/mock-repo";});
+    document.getElementsByClassName("pull-requests")[0].innerHTML = url.number;
+  });
+  // feature 5
+  var learners = extractActiveUsersFromFinishedArr (finishedArr).length;
+  document.getElementsByClassName("learners")[0].innerHTML = learners;
+}
+
 function filterFinishedMessages(messagesArr) {
   return finishedArr = messagesArr.filter((obj) => { 
     return obj.finished == true && obj.displayName != "zonzujiro"; 
@@ -94,6 +123,25 @@ function User(displayName, username, avatarUrl, lessons) {
   this.avatarUrl = avatarUrl;
   this.lessons = lessons || [];
 };
+
+function getAllUsersOfChat (messagesArr) {
+  var allUsersArr = [];
+  for (var i = 0; i < messagesArr.length; i++) {
+      var existUser = allUsersArr.find((user) => user.username === messagesArr[i].username);
+
+      if(existUser != undefined) { 
+        existUser.lessons = existUser.lessons.concat(messagesArr[i].lesson);
+      } else {
+        allUsersArr.push(new User(
+          messagesArr[i].displayName, 
+          messagesArr[i].username,
+          messagesArr[i].avatarUrl,
+          messagesArr[i].lesson
+      ));
+    }
+  } 
+  return allUsersArr;
+}
 
 function extractActiveUsersFromFinishedArr (finishedArr) {
   var usersArr = [];

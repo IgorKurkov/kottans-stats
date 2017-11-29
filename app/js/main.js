@@ -1,6 +1,5 @@
 var global = {
-  token : "826700829f73a8dd6ec83770aae456bb3bc6b6df",
-  tokenString : "access_token=" + "826700829f73a8dd6ec83770aae456bb3bc6b6df",
+  tokenString : "access_token=" + "9e13190a6f70e28b6e263011e63d4b34d26bd697",
   roomUrlPrefix : "https://api.gitter.im/v1/rooms/"
 };
 

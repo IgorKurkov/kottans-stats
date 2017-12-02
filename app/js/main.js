@@ -40,9 +40,9 @@ function fetchAllMessages(oldestMessageId) {
       var users = extractActiveUsersFromFinishedArr (finishedArr);
       insertTaskListToPage (finishedArr); //void
       insertValuesToFeaturesCards (messagesArr); //void
-      var usersUrls = getUrlsOfUsersInChat (messagesArr, getAllUsersOfChat);
-      console.log(usersUrls)
-      getLocationsFromUserUrls (usersUrls, buildLocationsGraphArray); //void
+      //var usersUrls = getUrlsOfUsersInChat (messagesArr, getAllUsersOfChat);
+      //console.log(usersUrls)
+      //getLocationsFromUserUrls (usersUrls, buildLocationsGraphArray); //void
 
       drawTimelineChart (buildTimelineGraphArr (finishedArr, users));
       drawVerticalBarChart (buildSumOfTasksByUserGraphArr (users));
@@ -57,7 +57,7 @@ fetchAllMessages(oldestMessageId);
 
 function buildMessagesArr(data) {
   var messagesArr = [];
-  console.log(data)
+  //console.log(data)
   for (var i = 0; i < data.length; i++) {
     var croppedData = data[i];
     var regexFinished = /finished/;
@@ -83,7 +83,7 @@ function buildMessagesArr(data) {
         url: croppedData.fromUser["url"]
     };
   }
-  console.log(messagesArr)
+  //console.log(messagesArr)
   return messagesArr;
 }
 
@@ -101,7 +101,7 @@ function insertValuesToFeaturesCards (messagesArr) {
   document.getElementsByClassName("count-messages")[0].innerHTML = messagesArr.length;
   // feature 2
   getSingleRequest("http://api.github.com/repos/kottans/frontend", (data) => {
-    document.getElementsByClassName("starred-repo")[0].innerHTML = data.stargazers_count;
+    document.getElementsByClassName("starred-repo")[0].innerHTML = (data.stargazers_count == undefined) ? "..." : data.stargazers_count;
   });
   // feature 3
   document.getElementsByClassName("active-users")[0].innerHTML = getAllUsersOfChat(messagesArr).length;
@@ -150,50 +150,54 @@ function getAllUsersOfChat (messagesArr) {
   return allUsersArr;
 }
 
-function getUrlsOfUsersInChat (messagesArr, getAllUsersOfChat) {
-  var usersUrls = [];
-  var allUsersInChat = getAllUsersOfChat (messagesArr);
-  for (var i = 0; i < allUsersInChat.length; i++) {
-    usersUrls[i] = "https://api.github.com/users"+ allUsersInChat[i].url;
-  }
-  return usersUrls;
-}
+// function getUrlsOfUsersInChat (messagesArr, getAllUsersOfChat) {
+//   var usersUrls = [];
+//   var allUsersInChat = getAllUsersOfChat (messagesArr);
+//   for (var i = 0; i < allUsersInChat.length; i++) {
+//     usersUrls[i] = "https://api.github.com/users"+ allUsersInChat[i].url;
+//   }
+//   return usersUrls;
+// }
 
-function getLocationsFromUserUrls (usersUrls, buildLocationsGraphArray) {
-  Promise.all(usersUrls.map(url =>
-    fetch(url).then(resp => resp.text())
-  )).then(parsedUsersObjs => {
-    //console.log(parsedUsersObjs)
-    var locationsGraphArr = buildLocationsGraphArray (parsedUsersObjs);
-    console.log(locationsGraphArr)
-    //then build pie chart
-    //then build geo chart
-  });
-}
+// function getLocationsFromUserUrls (usersUrls, buildLocationsGraphArray) {
+//   Promise.all(usersUrls.map(url =>
+//     fetch(url).then(resp => resp.text())
+//   )).then(parsedUsersObjs => {
+//     //console.log(parsedUsersObjs)
+//     var locationsGraphArr = buildLocationsGraphArray (parsedUsersObjs);
+//     console.log(locationsGraphArr)
+//     //then build pie chart
+//     //then build geo chart
+//   });
+// }
 
-function buildLocationsGraphArray (parsedUsersObjs) {
-  //console.log(parsedUsersObjs)
-  var locationNamesArr = [];
-  for (var i = 0; i < parsedUsersObjs.length; i++) {
-    console.log(parsedUsersObjs[i])
-    locationNamesArr[i] = parsedUsersObjs[i][0]["location"];
-    console.log(locationNamesArr[i])
-  }
-  console.log(locationNamesArr)
-  //var items = [4,5,4,6,3,4,5,2,23,1,4,4,4];
-  var locationsCountObj = locationNamesArr.reduce(function(prev, cur) {
-    prev[cur] = (prev[cur] || 0) + 1;
-    return prev;
-    }, {});
+// function buildLocationsGraphArray (parsedUsersObjs) {
+//   //console.log(parsedUsersObjs)
+//   var locationNamesArr = [];
+//   for (var i = 0; i < parsedUsersObjs.length; i++) {
+//     console.log("parsedUsersObjs[i]")
+//     console.log(parsedUsersObjs[i])
+//     locationNamesArr[i] = parsedUsersObjs[i]["location"];
+//     console.log("locationNamesArr[i]")
+//     console.log(locationNamesArr[i])
+//   }
+//   console.log("locationNamesArr")
+//   console.log(locationNamesArr)
+//   //var items = [4,5,4,6,3,4,5,2,23,1,4,4,4];
+//   var locationsCountObj = locationNamesArr.reduce(function(prev, cur) {
+//     prev[cur] = (prev[cur] || 0) + 1;
+//     return prev;
+//     }, {});
 
-  var locationsGraphArr = [];
-  for (var i in locationsCountObj) { // i is the property name
-    locationsGraphArr.push([ i, locationsCountObj[i] ]);
-  }
-  console.log(locationsGraphArr)
+//   var locationsGraphArr = [];
+//   for (var i in locationsCountObj) { // i is the property name
+//     locationsGraphArr.push([ i, locationsCountObj[i] ]);
+//   }
+//   console.log("locationsGraphArr")
+//   console.log(locationsGraphArr)
 
-  return locationsGraphArr;
-}
+//   return locationsGraphArr;
+// }
 
 
 

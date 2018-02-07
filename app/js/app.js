@@ -1,39 +1,35 @@
-var global = {
-  tokenString : "access_token=" + "9e13190a6f70e28b6e263011e63d4b34d26bd697",
-  roomUrlPrefix : "https://api.gitter.im/v1/rooms/"
-};
+// var global = {
+//   tokenString : "access_token=" + "9e13190a6f70e28b6e263011e63d4b34d26bd697",
+//   roomUrlPrefix : "https://api.gitter.im/v1/rooms/"
+// };
 
 var kottansRoom = {
   id : "59b0f29bd73408ce4f74b06f",
   avatar : "https://avatars-02.gitter.im/group/iv/3/57542d27c43b8c601977a0b6"
 };
 
+// function getAllRoomMessages(count, oldestId) {
+//   if(oldestId){oldestId = "&beforeId="+oldestId;} 
+//   return global.roomUrlPrefix + kottansRoom.id +
+//           "/chatMessages?limit="+ count + oldestId +"&" + global.tokenString;
+//   }; 
+
 var preloader = document.getElementById("timeline");
 preloader.innerHTML = `<div class="kitty-wiggle-full"></div><center><h3>Loading ...</h3></center>`;
 
-function getAllRoomMessages(count, oldestId) {
-  if(oldestId){oldestId = "&beforeId="+oldestId;} 
-  return global.roomUrlPrefix + kottansRoom.id +
-          "/chatMessages?limit="+ count + oldestId +"&" + global.tokenString;
-  };  
 
-var data = [];
+var hash = '7e16b5527c77ea58bac36dddda6f5b444f32e81b';
+var domain = "https://secret-earth-50936.herokuapp.com/";
 
-var oldestMessageId = null;
-
-function fetchAllMessages(oldestMessageId) {
-  fetch(getAllRoomMessages(100, oldestMessageId))
-  .then(function(response) {
-    return response.json();
-  })
-  .then( function(response) {
-    Array.prototype.push.apply(data, response);
-    var oldestMessageId = response[0].id; //console.log(oldestMessageId)  
-    if(response.length == 100) {
-      fetchAllMessages(oldestMessageId); // fetch again
-    } 
-    else {
-      var messagesArr =  buildMessagesArr (data);
+function request(link, hash, customRender, fetchOptions) {
+  let url = domain + link + hash;
+  let requestObj = (fetchOptions) ? new Request(url, fetchOptions) : new Request(url);
+  fetch(requestObj)
+    .then(function(res){  
+      return res.json();
+    })
+    .then(function(json){
+      var messagesArr =  buildMessagesArr (json);
       var finishedArr = filterFinishedMessages (messagesArr);
       var activityArr = buildActivityArrOfChattingByDay (messagesArr);
       
@@ -47,40 +43,78 @@ function fetchAllMessages(oldestMessageId) {
       drawTimelineChart (buildTimelineGraphArr (finishedArr, users));
       drawVerticalBarChart (buildSumOfTasksByUserGraphArr (users));
       drawActivityLineChart (activityArr);
-    }
-  })
-  .catch(alert);
-}
-fetchAllMessages(oldestMessageId); 
 
+    });
+  } 
+
+request("messages", hash);
+
+
+// var data = [];
+// var oldestMessageId = null;
+// function fetchAllMessages(oldestMessageId) {
+//   fetch(getAllRoomMessages(100, oldestMessageId))
+//   .then(function(response) {
+//     return response.json();
+//   })
+//   .then( function(response) {
+//     Array.prototype.push.apply(data, response);
+//     var oldestMessageId = response[0].id; //console.log(oldestMessageId)  
+//     console.log(JSON.stringify(response[0]))
+//     if(response.length == 100) {
+//       fetchAllMessages(oldestMessageId); // fetch again
+//     } 
+//     else {
+//       var messagesArr =  buildMessagesArr (data);
+//       var finishedArr = filterFinishedMessages (messagesArr);
+//       var activityArr = buildActivityArrOfChattingByDay (messagesArr);
+      
+//       var users = extractActiveUsersFromFinishedArr (finishedArr);
+//       insertTaskListToPage (finishedArr); //void
+//       insertValuesToFeaturesCards (messagesArr); //void
+//       //var usersUrls = getUrlsOfUsersInChat (messagesArr, getAllUsersOfChat);
+//       //console.log(usersUrls)
+//       //getLocationsFromUserUrls (usersUrls, buildLocationsGraphArray); //void
+
+//       drawTimelineChart (buildTimelineGraphArr (finishedArr, users));
+//       drawVerticalBarChart (buildSumOfTasksByUserGraphArr (users));
+//       drawActivityLineChart (activityArr);
+//     }
+//   })
+//   .catch(alert);
+// }
+// fetchAllMessages(oldestMessageId); 
 
 
 function buildMessagesArr(data) {
   var messagesArr = [];
-  //console.log(data)
+  // console.log(data)
   for (var i = 0; i < data.length; i++) {
-    var croppedData = data[i];
-    var regexFinished = /finished/;
-    var regexlessonsName = /Website Performance|server and http tools|CSS Basics|HTML5 and CSS|Object Oriented JS|Intro to JS|Offline Web|Pair Game|Intro to HTML & CSS|task 2|Task 1|Web Design/ig;
-    var sent = new Date(croppedData["sent"]); // 2017-11-17T14:01:46.906Z
+    var message = data[i];
+
+    
+    var regexFinished     = /finished/;
+    var regexlessonsName  = /Website Performance|server and http tools|CSS Basics|HTML5 and CSS|Object Oriented JS|Intro to JS|Offline Web|Pair Game|Intro to HTML & CSS|task 2|Task 1|Web Design/ig;
+    var sent              = new Date(message["sent"]); // 2017-11-17T14:01:46.906Z
     var dateSentFormatted = sent.getFullYear() +"."+ 
       ("0"+ (sent.getMonth() + 1)).slice(-2) +"."+ 
       ("0"+ sent.getDate()).slice(-2) +" "+ 
       ("0"+ sent.getHours()).slice(-2) +":"+ 
       ("0"+ sent.getMinutes()).slice(-2);
+    var taskNameMatch     = message["text"].match(regexlessonsName);
 
-    var matches = croppedData["text"].match(regexlessonsName);
     messagesArr[i] = {
-        lesson: (matches == null) ? "Unrecognised task" : matches,
-        finished: regexFinished.test(croppedData["text"]),
-        avatarUrl: croppedData.fromUser["avatarUrl"],
-        displayName: croppedData.fromUser["displayName"],
-        username: croppedData.fromUser["username"], 
-        gv: croppedData.fromUser["gv"],
-        v: croppedData.fromUser["v"],
-        text: croppedData["text"],
-        sent: dateSentFormatted,
-        url: croppedData.fromUser["url"]
+        lesson:      (taskNameMatch == null) ? "Unrecognised task" : taskNameMatch,
+        finished:    regexFinished.test(message["text"]),
+        avatarUrl:   message["avatarUrl"],
+        displayName: message["displayName"],
+        username:    message["username"], 
+        gv:          message["gv"],
+        v:           message["v"],
+        text:        message["text"],
+        html:        message["html"],
+        sent:        dateSentFormatted,
+        url:         message["url"]
     };
   }
   //console.log(messagesArr)

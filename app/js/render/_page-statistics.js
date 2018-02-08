@@ -12,7 +12,7 @@ exports.insertValuesToFeaturesCards = function() {
   });
 
   // feature 2
-  request.request("http://api.github.com/repos/kottans/frontend", (data) => {
+  request.request("https://api.github.com/repos/kottans/frontend", (data) => {
     sel.blocks.starredRepo.innerHTML = (data.stargazers_count == undefined) ? "..." : data.stargazers_count;
   });
 

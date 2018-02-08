@@ -8,7 +8,6 @@ exports.insertTaskListToPage = function(finishedArr) {
   imageLogo.src = config.vars.kottansRoom.avatar;
   document.querySelector('#myInput').addEventListener('input', table.myFunction);
 
-  console.log(finishedArr)
   var html = '';
 
   var divTable = document.getElementById('myTable');

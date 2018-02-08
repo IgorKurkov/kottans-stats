@@ -38,7 +38,6 @@ exports.drawCountOfTasksPerUser_VerticalBar = function(users) {
   let graphArr = users.map(function(user) {
     return new Array(user.username+"", user.lessons.length, "lightblue");
   });
-  console.log(graphArr)
   google.charts.load('current', {packages: ['corechart', 'bar']});
   google.charts.setOnLoadCallback(drawBasic);
   function drawBasic() {
@@ -76,11 +75,9 @@ exports.drawCountOfTasksPerUser_VerticalBar = function(users) {
 
 
 exports.drawActivity_LineChart = function(activityArr) {
-  console.log(activityArr)
   activityArr.map(function(day) {
     day[0] = new Date(day[0]);
   });
-  console.log(activityArr)
   google.charts.load('current', {packages: ['corechart', 'line']});
   google.charts.setOnLoadCallback(drawBasic);
 

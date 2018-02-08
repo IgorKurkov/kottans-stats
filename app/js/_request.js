@@ -7,15 +7,16 @@ exports.request = function(link, renderCallback, fetchOptions) {
   }
   else {
     url = config.vars.domain + link + config.vars.hash;
-    console.log(url)
   }
 
   let requestObj = (fetchOptions) ? new Request(url, fetchOptions) : new Request(url);
   fetch(requestObj)
     .then(res => {
       res.json().then(response => {
-        console.log(response)
-        renderCallback(response)
+        // console.log(response)
+        if(renderCallback) {
+          renderCallback(response)
+        }
       });
     })
     .catch(error => {

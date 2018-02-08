@@ -1,4 +1,4 @@
-function myFunction() {
+exports.myFunction = function() {
   // Declare variables 
   var input, filter, table, tr, td, i;
   input = document.getElementById("myInput");
@@ -20,7 +20,7 @@ function myFunction() {
 }
 
 
-function sortTable(n) {
+exports.sortTable = function(n) {
   var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
   table = document.getElementById("myTable");
   switching = true;

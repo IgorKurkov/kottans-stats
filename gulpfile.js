@@ -7,6 +7,7 @@ var gulp        = require('gulp'),
     cssmin      = require('gulp-cssmin'),
     rename      = require('gulp-rename'),
     uglify      = require('gulp-uglify'),
+    buffer      = require('vinyl-buffer'),
     concat      = require("gulp-concat"),
     gulpCopy    = require('gulp-copy'),
 ///////////////////////////////
@@ -19,11 +20,11 @@ var gulp        = require('gulp'),
     _           = require('lodash'),
     reload      = browserSync.reload,
     change      = require('gulp-change');
-
+//npm i --save-dev babel-core
     
 gulp.task("start-server", () => {
   browserSync({
-    server: {baseDir: "app"},
+    server: {baseDir: "dist"},
     notify: true});
 });
 
@@ -38,16 +39,18 @@ gulp.task('less', () => {
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }).on("error", notify.onError()))
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('app/css'))
+    .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.reload({stream: true}));
 });
 
 
-gulp.task("default", ["less", "start-server"], () => {
-  gulp.watch('app/css/**/*.css', ["reload"]);
-  gulp.watch('app/less/**/*.less', ["less", "reload"]);
-  gulp.watch('app/js/**/*.js', ['watch-js', "reload"]);
-  gulp.watch('app/**/*.html', ["reload"]);
+gulp.task("default", ["less", 'build-all', "start-server"], () => {
+  // gulp.watch('app/css/**/*.css', ['build-css', "reload"]);
+  gulp.watch('app/less/**/*.less', ["less", 'build-css', "reload"]);
+  gulp.watch('app/js/**/*.js', ['watch-js','build-js'/*, "reload"*/]);
+  gulp.watch('app/**/*.html', ['build-html', browserSync.reload]);
+  gulp.watch('app/libs/**/*', ['build-libs', "reload"]);
+  gulp.watch('app/assets/**/*', ['build-imgs', "reload"]);
 
 })
 
@@ -78,9 +81,15 @@ return gulp.src('app/libs/**/*')
     .pipe(gulp.dest('dist/libs/'));
   });
 
+gulp.task('build-imgs', function() {
+  return gulp.src('app/assets/**/*')
+      .pipe(gulpCopy('dist/', {prefix: 1}))
+      .pipe(gulp.dest('dist/assets/'));
+    });
 
-gulp.task('build-all', ['build-libs', 'build-html', 'build-css', 'build-js'], () => {
-  sleep(1);
+
+gulp.task('build-all', ['build-imgs', 'build-libs', 'build-html', 'build-css', 'build-js'], () => {
+  // sleep(1);
 });
 
 ////////=== transpile ==JS== modules to single js file  ===//////////
@@ -109,15 +118,17 @@ function bundle() {
     .bundle()
     .on('error', function(err) { console.log('Error: ' + err.message); })
     .pipe(source(config.outputFile))
+    // .pipe(buffer()) // <----- convert from streaming to buffered vinyl file object
+    // .pipe(uglify()) // now gulp-uglify works 
     .pipe(gulp.dest(config.outputDir))
-    .pipe(reload({ stream: true }));
+    .pipe(browserSync.reload({stream: true}));
 }
 
 gulp.task('build-persistent', ['clean'], function() {
   return bundle();
 });
 gulp.task('build-js', ['build-persistent'], function() {
-  process.exit(0);
+  // process.exit(0);
 });
 gulp.task('watch-js', ['build-persistent'], function() {
   browserSync({

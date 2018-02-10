@@ -1,4 +1,4 @@
-# kottans-stats
+# kottans-stats v2
 https://igorkurkov.github.io/kottans-stats/
 
 MDL SPA for tracking progress of users in course of kottans/frontend for awesome inspiring community =Kottans=
@@ -11,4 +11,20 @@ Pull requests are welcome!)
 Kottans are really cool! Try it)
 
 If you want to start it with gulp - type `npm install`, and then `gulp` - you must have **node.js** and **npm** on your pc.
+
+### Todo
+
+**version 1**
+
+- [x] write adaptive SPA with parsing GitterAPI
+- [x] do autocomplite search
+- [x] make few charts based on google charts 
+
+**version 2**
+
+- [x] made full refactoring to modular project
+- [x] connect to own REST API backend (node + mongo)
+- [ ] implement filters, sorts, search
+- [ ] calendar and some new graphs
+- [ ] save filtered content as .md
 

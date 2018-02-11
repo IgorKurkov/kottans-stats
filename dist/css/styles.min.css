@@ -1,13 +1,5 @@
 /* -- import Roboto Font ---------------------------- */
 @import "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,cyrillic";
-body {
-  font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
-}
-.user-icon {
-  width: 30px;
-  border-radius: 50%;
-  margin-right: 5px;
-}
 .mdl-layout__container {
   top: 0;
 }
@@ -26,12 +18,16 @@ body {
   padding-left: 0px;
   font-family: 'Inconsolata', monospace;
 }
-.gitter-icon {
-  width: 25px;
-  margin-right: 2px;
-}
 .mdl-navigation__link:hover {
   color: #f0e8e8;
+}
+.kitty-wiggle-full {
+  background-image: url(../assets/kitty-wiggle-full.gif);
+  background-size: cover;
+  width: 100vw;
+  height: 40vw;
+  background-position: center;
+  margin: 0 auto;
 }
 .mdl-data-table td,
 .mdl-data-table th {
@@ -50,18 +46,6 @@ body {
   width: 100px;
   margin: 0 auto;
   /* border-radius: 50%; */
-}
-.drawer-text {
-  padding: 1em;
-  text-align: center;
-}
-.kitty-wiggle-full {
-  background-image: url(../assets/kitty-wiggle-full.gif);
-  background-size: cover;
-  width: 100vw;
-  height: 40vw;
-  background-position: center;
-  margin: 0 auto;
 }
 .features {
   display: flex;
@@ -117,29 +101,6 @@ button.started i {
   /* margin: 30px; */
 }
 /* charts */
-@media screen and (max-width: 1000px) {
-  .features-item {
-    background-color: lightgreen;
-    margin: 10px;
-    width: 30%;
-  }
-  .features {
-    flex-wrap: wrap;
-  }
-}
-@media screen and (max-width: 400px) {
-  #countdown-container {
-    width: 100%;
-  }
-  .features-item {
-    width: 100%;
-  }
-  .chart-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    /* height: 370px; */
-  }
-}
 #myInput {
   background-image: url('/css/searchicon.png');
   /* Add a search icon to input */
@@ -162,4 +123,39 @@ button.started i {
 #myTable tr:hover {
   /* Add a grey background color to the table header and on hover */
   background-color: #f1f1f1;
+}
+body {
+  font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
+}
+.user-icon {
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.gitter-icon {
+  width: 25px;
+  margin-right: 2px;
+}
+@media screen and (max-width: 1000px) {
+  .features-item {
+    background-color: lightgreen;
+    margin: 10px;
+    width: 30%;
+  }
+  .features {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 400px) {
+  #countdown-container {
+    width: 100%;
+  }
+  .features-item {
+    width: 100%;
+  }
+  .chart-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    /* height: 370px; */
+  }
 }

@@ -50,7 +50,7 @@ gulp.task("default", ["less", 'build-all', "start-server"], () => {
   // gulp.watch('app/css/**/*.css', ['build-css', "reload"]);
   gulp.watch('app/less/**/*.less', ["less", 'build-css', "reload"]);
   gulp.watch('app/js/**/*.js', ['watch-js','build-js'/*, "reload"*/]);
-  gulp.watch('app/**/*.html', ['build-html', browserSync.reload]);
+  gulp.watch('app/**/*.html', ['build-html', "reload"]);
   gulp.watch('app/libs/**/*', ['build-libs', "reload"]);
   gulp.watch('app/assets/**/*', ['build-imgs', "reload"]);
 

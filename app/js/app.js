@@ -4,8 +4,8 @@ const pageStatistics = require("./render/_page-statistics");
 const pageTimeline   = require("./render/_page-timeline");
 const pageSearch     = require("./render/_page-search");
 
-request.request("latest");
-request.request("latest", init);
+// request.request("latest");
+// request.request("latest", init);
 
 function init() {
   //timeline

@@ -19,7 +19,9 @@ var gulp        = require('gulp'),
     source      = require('vinyl-source-stream'),
     _           = require('lodash'),
     reload      = browserSync.reload,
-    change      = require('gulp-change');
+
+    change      = require('gulp-change'),
+    fileinclude    = require('gulp-file-include');
 //npm i --save-dev babel-core
     
 gulp.task("start-server", () => {
@@ -55,14 +57,17 @@ gulp.task("default", ["less", 'build-all', "start-server"], () => {
 })
 
 
-
 ///build
-gulp.task('build-html', function() {
-  return gulp.src('app/index.html')
-      .pipe(change((content) => {
-        return content.replace(/type\=\"module\"/g, '');
-        }))
-      .pipe(gulp.dest('dist/'))
+gulp.task('build-html', function(){
+  return gulp.src('app/template/index.html')
+      .pipe(fileinclude({
+          prefix: '@@',
+          basepath: 'app/template'
+      }))
+      // .pipe(change((content) => {
+      //   return content.replace(/type\=\"module\"/g, '');
+      //   }))
+      .pipe(gulp.dest('dist'))
 });
 
 gulp.task('build-css', function() {

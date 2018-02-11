@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('inc/_head.html')
+  <body>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header"> 
+      @@include('inc/_header.html')
+      @@include('inc/_sidebar.html')
+
+      <main class="mdl-layout__content">
+          @@include('inc/pages/_timeline.html')
+          @@include('inc/pages/_finished.html')
+          @@include('inc/pages/_statistics.html')
+      </main>     
+    </div>
+
+    
+    @@include('inc/_js-css-links.html')
+  </body>
+</html>

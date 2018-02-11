@@ -118,8 +118,8 @@ function bundle() {
     .bundle()
     .on('error', function(err) { console.log('Error: ' + err.message); })
     .pipe(source(config.outputFile))
-    // .pipe(buffer()) // <----- convert from streaming to buffered vinyl file object
-    // .pipe(uglify()) // now gulp-uglify works 
+    .pipe(buffer()) // convert from streaming to buffered vinyl file object
+    .pipe(uglify()) // (required babelify@6.3.0) now gulp-uglify works 
     .pipe(gulp.dest(config.outputDir))
     .pipe(browserSync.reload({stream: true}));
 }

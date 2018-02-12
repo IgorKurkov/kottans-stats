@@ -11,10 +11,6 @@
       data-flickity='{ "freeScroll": true, "contain": true, "prevNextButtons": false, "pageDots": false }'>
       </div>
     </div>
-
-   
-
-
     <div class="filters-main-content">
       <div class="left-sidebar">
         <div class="filters">
@@ -23,7 +19,15 @@
           <button class="filters-button" type="button">images</button>
           <button class="filters-button" type="button">video</button>
         </div>
-        <div class="mini-calendar"></div>
+        <div class="mini-calendar">
+          <!-- https://github.com/zabuto/calendar -->
+          <div id="my-calendar"></div>
+          <script type="application/javascript">
+              $(document).ready(function () {
+                  $("#my-calendar").zabuto_calendar({language: "en"});
+              });
+          </script>
+        </div>
       </div>
       <div class="center-messages-content">
           <details class="day-wrapper" open>  

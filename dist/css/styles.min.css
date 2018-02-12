@@ -188,11 +188,10 @@ button.started i {
 }
 #scroll-tab-4 .page-content .filters-main-content {
   display: flex;
-  justify-content: center;
 }
 #scroll-tab-4 .page-content .filters-main-content .left-sidebar {
   width: 25%;
-  height: 100%;
+  min-height: 100%;
   border: 1px solid black;
 }
 #scroll-tab-4 .page-content .filters-main-content .center-messages-content {

@@ -1,63 +1,121 @@
+@import '_mixins';
+
+
 #scroll-tab-4 {
   .page-content {
+    width: 100%;
+    position: relative;
     .search {
+      display: flex;
+      justify-content: space-around;
+      align-items: stretch;
       &-by-name {
-
+        .search-input;
+        // width:30%;
       }
       &-by-wtwr {
-
+        .search-input;  
+        // width:40%;
+        // margin: 0 10px;
       }
       &-reset {
-
+        .search-input;  
+        // width:30%;
       }
     }
-    .day-block-container {
-      &-item {
-
-      }
-    }
-    .left-sidebar {
-      .filters {
-
-      }
-      .mini-calendar {
-
-      }
-    }
-
-    .center-messages-content {
-      details.day-wrapper{
-        summary.day-title{
-
+    .scroll-wrapper{
+      position: relative;
+      width: 100%;
+      height: 80px;
+      margin: 5px 0;
+      //https://css-tricks.com/creating-responsive-touch-friendly-carousels-with-flickity/
+      //https://codepen.io/desandro/pen/zxRYGo
+      .carousel-cell {
+        position: relative;
+        width: 70px;
+        height: 70px;
+        margin-right: 5px;
+        background: #8C8;
+        border-radius: 5px;
+        color: white;
+        font-size: 40px; 
+        text-align: center;
+        display: block; 
+        span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
         }
-        .message-wrapper{
-          &-date-sent{
-
+      }
+    }
+    .filters-main-content{
+      display: flex;
+      justify-content: center;
+      .left-sidebar {
+        width: 25%;
+        height: 100%;
+        border: 1px solid black;
+        .filters {
+          .filters-button {
+            // .button;
           }
-          &-avatar{
-
+        }
+        .mini-calendar {
+  
+        }
+      }
+  
+      .center-messages-content {
+        width: 50%;
+        height: 100%;
+        border: 1px solid black;
+        details.day-wrapper{
+          summary.day-title{
+  
           }
-          &--markup{
-
+          .message-wrapper{
+            &-date-sent{
+  
+            }
+            &-avatar{
+  
+            }
+            &--markup{
+  
+            }
           }
+        }
+      }
+      .right-sidebar{
+        border: 1px solid black;
+        width: 25%;
+        height: 100%;
+        .chart-count-mess-per-user{
+  
+        }
+        .summary-per-media {
+          .summary-links-count{
+  
+          }
+          .summary-videos-count{
+  
+          }
+        }
+        .chart-count-mension-per-user{
+          
         }
       }
     }
-    .right-sidebar{
-      .chart-count-mess-per-user{
-
-      }
-      .summary-per-media {
-        .summary-links-count{
-
-        }
-        .summary-videos-count{
-
-        }
-      }
-      .chart-count-mension-per-user{
-        
-      }
-    }
+    
   }
 }
+
+
+
+
+
+
+
+
+

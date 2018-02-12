@@ -27,6 +27,9 @@
   <script src="libs/slickcircular/js/jquery.classycountdown.js"></script>
   <!-- logo title aka bash font -->
   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+  <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
+  <link href="https://npmcdn.com/flickity@2/dist/flickity.css" rel="stylesheet">
 </head>
   <body>
     <!-- Always shows a header, even in smaller screens. -->
@@ -71,7 +74,7 @@
 </div>
 
       <main class="mdl-layout__content">
-          <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
+          <section class="mdl-layout__tab-panel " id="scroll-tab-1">
     <div class="page-content"><!-- Your content goes here -->             
       <div id="timeline" style="width: 100%; height: 800px;">
         <div class="kitty-wiggle-full"></div><center><h3>Loading ...</h3></center>
@@ -142,45 +145,52 @@
       </div>
     </div>
   </section>
-          <section class="mdl-layout__tab-panel" id="scroll-tab-4">
+          <section class="mdl-layout__tab-panel is-active" id="scroll-tab-4">
   <div class="page-content"><!-- Your content goes here -->
     <div class="search">
-      <input class="search-by-name" placeholder="search by user" type="text">
+      <input class="search-by-name" placeholder="search by name" type="text">
       <input class="search-by-wtwr" placeholder="type anything..." type="text">
-      <button class="search-reset" type="button">Reset</button>
+      <input class="search-reset" placeholder="reset" type="button" value="Reset all">
     </div>
-    <div class="day-block-container">
-      <div class="day-block-item">15</div>
-      <div class="day-block-item">15</div>
-      <div class="day-block-item">15</div>
-    </div>
-    <div class="left-sidebar">
-      <div class="filters">
-        <button class="filters-button" type="button">links</button>
-        <button class="filters-button" type="button">pr's</button>
-        <button class="filters-button" type="button">images</button>
-        <button class="filters-button" type="button">video</button>
+     <div class="scroll-wrapper">
+      <!-- <div class="horizontal-scroll-wrapper squares"></div> -->
+      <div class="block-date-scroll carousel"
+      data-flickity='{ "freeScroll": true, "contain": true, "prevNextButtons": false, "pageDots": false }'>
       </div>
-      <div class="mini-calendar"></div>
     </div>
-    <div class="center-messages-content">
-        <details class="day-wrapper" open>  
-          <summary class="day-title">Посмотреть код</summary>
-          <div class="message-wrapper">
-              <span class="message-date-sent">sdf</span>
-              <div class="message-avatar">sdf</div>
-              <span class="message-markup">dfgdfgdfgdfgdfg</span>
-            </div>
-      </details>
-    </div>
-    <div class="right-sidebar">
-      <div class="chart-www"></div>
-      <div class="chart-count-mess-per-user"></div>
-      <div class="summary-per-media">
-        <div class="summary-links-count"></div>
-        <div class="summary-videos-count"></div>
+
+   
+
+
+    <div class="filters-main-content">
+      <div class="left-sidebar">
+        <div class="filters">
+          <button class="filters-button" type="button">links</button>
+          <button class="filters-button" type="button">pr's</button>
+          <button class="filters-button" type="button">images</button>
+          <button class="filters-button" type="button">video</button>
+        </div>
+        <div class="mini-calendar"></div>
       </div>
-      <div class="chart-count-mension-per-user"></div>
+      <div class="center-messages-content">
+          <details class="day-wrapper" open>  
+            <summary class="day-title">Посмотреть код</summary>
+            <div class="message-wrapper">
+                <span class="message-date-sent">sdf</span>
+                <div class="message-avatar">sdf</div>
+                <span class="message-markup">dfgdfgdfgdfgdfg</span>
+              </div>
+        </details>
+      </div>
+      <div class="right-sidebar">
+        <div class="chart-www"></div>
+        <div class="chart-count-mess-per-user"></div>
+        <div class="summary-per-media">
+          <div class="summary-links-count"></div>
+          <div class="summary-videos-count"></div>
+        </div>
+        <div class="chart-count-mension-per-user"></div>
+      </div>
     </div>
   </div>
 </section>

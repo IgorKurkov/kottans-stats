@@ -3,10 +3,11 @@ const request        = require('./_request');
 const pageStatistics = require("./render/_page-statistics");
 const pageTimeline   = require("./render/_page-timeline");
 const pageSearch     = require("./render/_page-search");
+const pageFilters     = require("./render/_page-filters");
 
 // request.request("latest");
 // request.request("latest", init);
-
+pageFilters.printDayBlocks();
 function init() {
   //timeline
   // window.onload = function () {

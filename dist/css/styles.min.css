@@ -165,18 +165,18 @@ button.started i {
 #scroll-tab-4 .page-content .scroll-wrapper {
   position: relative;
   width: 100%;
-  height: 80px;
+  height: 50px;
   margin: 5px 0;
 }
 #scroll-tab-4 .page-content .scroll-wrapper .carousel-cell {
   position: relative;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   margin-right: 5px;
-  background: #8C8;
+  background: #B8CAFF;
   border-radius: 5px;
   color: white;
-  font-size: 40px;
+  font-size: 30px;
   text-align: center;
   display: block;
 }
@@ -186,21 +186,65 @@ button.started i {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+#scroll-tab-4 .page-content .scroll-wrapper .carousel-cell:hover {
+  background: #85a4ff;
+}
+#scroll-tab-4 .page-content .scroll-wrapper .carousel-cell:active {
+  background: #527eff;
+}
 #scroll-tab-4 .page-content .filters-main-content {
   display: flex;
+  justify-content: space-between;
 }
 #scroll-tab-4 .page-content .filters-main-content .left-sidebar {
   width: 25%;
   min-height: 100%;
-  border: 1px solid black;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .button-filters {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .button-filters .filter-button {
+  width: 80%;
+  margin: 5px 10px ;
 }
 #scroll-tab-4 .page-content .filters-main-content .center-messages-content {
-  width: 50%;
+  box-shadow: 0 10px 25px 0px rgba(0, 0, 0, 0.15);
+  width: 45%;
   height: 100%;
-  border: 1px solid black;
+}
+#scroll-tab-4 .page-content .filters-main-content .center-messages-content details.day-wrapper {
+  background-color: white;
+  margin: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#scroll-tab-4 .page-content .filters-main-content .center-messages-content details.day-wrapper summary.day-title {
+  user-select: none;
+  padding: 10px;
+  background-color: #f2f4fd;
+  text-transform: uppercase;
+}
+#scroll-tab-4 .page-content .filters-main-content .center-messages-content details.day-wrapper summary.day-title:hover {
+  background-color: #dce1fa;
+}
+#scroll-tab-4 .page-content .filters-main-content .center-messages-content details.day-wrapper summary.day-title:active {
+  background-color: #c6cff6;
+}
+#scroll-tab-4 .page-content .filters-main-content .center-messages-content details.day-wrapper .message-wrapper {
+  cursor: default;
+  background-color: #d6d6d6;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+}
+#scroll-tab-4 .page-content .filters-main-content .center-messages-content details.day-wrapper .message-wrapper-avatar {
+  float: left;
 }
 #scroll-tab-4 .page-content .filters-main-content .right-sidebar {
-  border: 1px solid black;
   width: 25%;
   height: 100%;
 }

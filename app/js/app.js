@@ -8,6 +8,7 @@ const pageFilters     = require("./render/_page-filters");
 // request.request("latest");
 // request.request("latest", init);
 pageFilters.printDayBlocks();
+pageFilters.printMessages();
 function init() {
   //timeline
   // window.onload = function () {

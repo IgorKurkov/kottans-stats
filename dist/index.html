@@ -151,22 +151,27 @@
   <div class="page-content"><!-- Your content goes here -->
     <div class="search">
       <input class="search-by-name" placeholder="search by name" type="text">
-      <input class="search-by-wtwr" placeholder="type anything..." type="text">
+      <input class="search-by-wtwr" placeholder="search anything..." type="text">
       <input class="search-reset" placeholder="reset" type="button" value="Reset all">
     </div>
      <div class="scroll-wrapper">
-      <!-- <div class="horizontal-scroll-wrapper squares"></div> -->
+      <!-- https://css-tricks.com/creating-responsive-touch-friendly-carousels-with-flickity/ -->
       <div class="block-date-scroll carousel"
       data-flickity='{ "freeScroll": true, "contain": true, "prevNextButtons": false, "pageDots": false }'>
-      </div>
+      <!-- date blocks renders here -->
+    </div>
     </div>
     <div class="filters-main-content">
       <div class="left-sidebar">
-        <div class="filters">
-          <button class="filters-button" type="button">links</button>
-          <button class="filters-button" type="button">pr's</button>
-          <button class="filters-button" type="button">images</button>
-          <button class="filters-button" type="button">video</button>
+        <div class="button-filters">
+           <button class="filter-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="button">
+             all with links</button>
+          <button class="filter-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="button">
+              all with pr's</button>
+          <button class="filter-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="button">
+              all with images</button>
+          <button class="filter-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="button">
+              all with video</button>
         </div>
         <div class="mini-calendar">
           <!-- https://github.com/zabuto/calendar -->
@@ -179,14 +184,7 @@
         </div>
       </div>
       <div class="center-messages-content">
-          <details class="day-wrapper" open>  
-            <summary class="day-title">Посмотреть код</summary>
-            <div class="message-wrapper">
-                <span class="message-date-sent">sdf</span>
-                <div class="message-avatar">sdf</div>
-                <span class="message-markup">dfgdfgdfgdfgdfg</span>
-              </div>
-        </details>
+        <!-- messages renders here -->
       </div>
       <div class="right-sidebar">
         <div class="chart-www"></div>

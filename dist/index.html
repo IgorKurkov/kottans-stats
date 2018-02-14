@@ -14,8 +14,8 @@
   <!-- google charts  -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <!-- <script src="libs/jquery.min.js"></script> -->
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="libs/jquery/jquery-1.12.4.js"></script>
+  <script src="libs/jquery/jquery-ui.js"></script>
   <!-- material lite  -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
@@ -28,8 +28,8 @@
   <!-- logo title aka bash font -->
   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
   <!-- flickity scrollable flex date divs -->
-  <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
-  <link href="https://npmcdn.com/flickity@2/dist/flickity.css" rel="stylesheet">
+  <script src="libs/flickity/flickity.pkgd.min.js"></script>
+  <link href="libs/flickity/flickity.min.css" rel="stylesheet">
   <!-- zabuto calendar -->
   <script src="libs/calendar/zabuto_calendar.min.js"></script>
   <link rel="stylesheet" type="text/css" href="libs/calendar/zabuto_calendar.min.css">
@@ -183,10 +183,15 @@
           </script>
         </div>
       </div>
-      <div class="center-messages-content">
-        <!-- messages renders here -->
+      <div class="messages-wrapper">
+        <div class="center-messages-content">
+          <!-- messages renders here -->
+        </div>
       </div>
       <div class="right-sidebar">
+        <button class="filter-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="button">
+              all with video</button>
+        <!-- </div> -->
         <div class="chart-www"></div>
         <div class="chart-count-mess-per-user"></div>
         <div class="summary-per-media">

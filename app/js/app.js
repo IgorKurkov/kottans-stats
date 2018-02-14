@@ -9,6 +9,10 @@ const pageFilters     = require("./render/_page-filters");
 // request.request("latest", init);
 pageFilters.printDayBlocks();
 pageFilters.printMessages();
+
+var divv = document.querySelector(".open");
+divv.scrollTop = divv.scrollHeight;
+
 function init() {
   //timeline
   // window.onload = function () {

@@ -13,14 +13,27 @@ exports.printDayBlocks = function() {
 exports.printMessages = function() {
   console.log(messagesContainer)
   let html = '';
+  let open = '';
   for(let i = 1; i <= 30; i++){
-    html +=  `<details class="day-wrapper" open>
+    open = (i == 30) ? "open": "";
+    html +=  `<details class="${open} day-wrapper" ${open}>
                 <summary class="day-title">Messages by ${i}.01.2018</summary>
                   <div class="message-wrapper">
-                    <span class="message-date-sent">sdf</span>
-                    <div class="message-avatar"><img src="https://avatars1.githubusercontent.com/u/2997359?v=4&s=30"></div>
-                    <span class="message-markup">dfgdfgdfgdfgdfg</span>
+                    <span class="message-date-sent">${i}.02.18 at 14:38</span>
+                    <div class="message-avatar"><img src="../assets/icon.png"></div>
+                    <div class="message-username">Yevhen Orlov</div>
+                    <span class="message-markup">lorem lorem lorem lorem lorem lorem lorem 
+                    lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem 
+                    lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem </span>
                   </div>
+                  <div class="message-wrapper">
+                  <span class="message-date-sent">${i}.02.18 at 14:38</span>
+                  <div class="message-avatar"><img src="../assets/icon.png"></div>
+                  <div class="message-username">Yevhen Orlov</div>
+                  <span class="message-markup">lorem lorem lorem lorem lorem lorem lorem 
+                  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem 
+                  lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem </span>
+                </div>
               </details>`;
   }
   messagesContainer.innerHTML = html;

@@ -34,13 +34,21 @@ gulp.task("reload", () => {
   browserSync.reload({stream: true});
 })
 
-gulp.task('less', () => {
+gulp.task('sass', () => {
+  return gulp.src('app/sass/**/*+(.sass|.scss)')
+      .pipe(sass().on("error", notify.onError()))
+      .pipe(gulp.dest('app/less'))
+      .pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task('less', ['sass'], () => {
   // return gulp.src('app/less/**/*.less')
   return gulp.src('app/less/styles.less')
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }).on("error", notify.onError()))
     .pipe(rename({suffix: '.min'}))
+    // .pipe(cssmin())
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.reload({stream: true}));
 });
@@ -73,7 +81,7 @@ gulp.task('build-html', function(){
 gulp.task('build-css', function() {
   return gulp.src([
     'app/css/**/*.css',  
-    "app/libs/weather-icons/css/weather-icons.min.css", 
+    // "app/libs/weather-icons/css/weather-icons.min.css", 
   ])
   .pipe(concat('styles.min.css'))
   .pipe(cssmin())
@@ -94,7 +102,7 @@ gulp.task('build-imgs', function() {
 
 
 gulp.task('build-all', ['build-imgs', 'build-libs', 'build-html', 'build-css', 'build-js'], () => {
-  // sleep(1);
+  
 });
 
 ////////=== transpile ==JS== modules to single js file  ===//////////
@@ -150,9 +158,4 @@ gulp.task('watch-js', ['build-persistent'], function() {
 ///////////////////////////////////////////
 
 
-// gulp.task('sass', () => {
-//   return gulp.src('app/sass/**/*+(.sass|.scss)')
-//       .pipe(sass().on("error", notify.onError()))
-//       .pipe(gulp.dest('app/css'))
-//       .pipe(browserSync.reload({stream: true}));
-// });
+

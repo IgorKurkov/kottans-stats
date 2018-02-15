@@ -13,6 +13,13 @@ pageFilters.printMessages();
 var divv = document.querySelector(".open");
 divv.scrollTop = divv.scrollHeight;
 
+document.querySelector(".open").addEventListener('click', () => {
+  document.querySelector(".left-sidebar").style.marginLeft = "0px";
+  // document.querySelector("body").style.marginLeft = "250px";
+  // document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+});
+
+
 function init() {
   //timeline
   // window.onload = function () {

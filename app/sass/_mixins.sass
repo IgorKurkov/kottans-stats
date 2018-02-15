@@ -1,0 +1,22 @@
+//https://stackoverflow.com/questions/340209/generate-colors-between-red-and-green-for-a-power-meter/340214#340214
+//http://jsfiddle.net/0awncw5u/2/
+@mixin printClasses($class-slug, $countOfClasses)
+  @for $i from 1 through $countOfClasses
+    $counter: $counter + 1
+    @if $counter == 99
+      $counter: 98
+    $r: 0
+    $g: 0
+    $b: 0
+    .#{$class-slug}-#{$i}
+      @if $counter <= 50
+        // @debug floor(255 * ($counter / 50))
+        $r: floor(255 * ($counter / 50))
+        $g: 255
+        color: rgb($r, $g, $b)
+      @else 
+        // @debug floor(255 * ($counter / 50))
+        $r: 255
+        $g: floor(255 * ((50 - ($counter % 50)) / 50 ))
+        color: rgb($r, $g, $b)
+

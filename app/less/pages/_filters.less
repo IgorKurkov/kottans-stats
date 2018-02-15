@@ -51,34 +51,31 @@
         }
       }
     }
-    .filters-main-content{
 
+    .filters-main-content{
       display: flex;
       justify-content: space-around;
-      width: 100%;
+      height: calc(100vh - 25%);
       position: relative;
       .left-sidebar {
-        // margin-left:10px;
         box-shadow: 0px 10px 25px 5px rgba(0,0,0,0.15);
         width: 25%;
         min-height: 100%;
-        // border: 1px solid black;
+
         .button-filters {
           text-align: center;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-wrap: wrap;
-          // height: 500px;
 
           .filter-button{
             width: 80%;
             margin: 5px 10px ;
-            // .button;
           }
         }
         .mini-calendar {
-          
+
         }
       }
       .messages-wrapper {
@@ -87,23 +84,16 @@
       }
       .center-messages-content {
         box-shadow: 0px 10px 25px 5px rgba(0,0,0,0.15);
-        // width: 45%;
-        // height: calc(60vh - 100px);
-        // overflow-y: auto;
         margin: 0 auto;
-        // border: 1px solid red;
-        // width:800px;
         position: absolute;
         bottom:0px;
         top:0px;
         overflow:auto;
-        // border: 1px solid black;
         details.day-wrapper{
           background-color: white;
           margin: 10px;
           border-radius: 4px;
           cursor: pointer;
-          // border: 1px solid black;
 
           summary.day-title{
             user-select: none;
@@ -144,7 +134,6 @@
         }
       }
       .right-sidebar{
-        // border: 1px solid black;
         box-shadow: 0px 10px 25px 5px rgba(0,0,0,0.15);
         width: 25%;
         min-height: 100%;

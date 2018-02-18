@@ -75,6 +75,25 @@
           }
         }
         .mini-calendar {
+          
+          
+          // color: white;
+          user-select: none;
+          td div.day {
+            z-index: -999;
+            font-size: 16px;
+            border-radius: 4px;
+            &:hover {
+              background-color: darken(#ccc, 10%);
+            }
+            &:active {
+              background-color: darken(#ccc, 20%);
+            }
+          .badge-today {
+            padding: 5px;
+            border-radius: 50%;
+          }
+          }
 
         }
       }

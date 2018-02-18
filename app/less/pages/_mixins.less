@@ -12,3 +12,17 @@
 
 }
 
+
+//colorize mixin
+.colorize(@n, @i: 0) when (@i =< @n) {
+  .day-block-@{i} {
+    background: hsl(100 - (110 / @n)*@i, 100%, 50%);
+  }
+  .colorize(@n, (@i + 1));
+}
+
+.colorize(100);
+
+.day-block-110 {  
+  background-color: #f20018;
+}

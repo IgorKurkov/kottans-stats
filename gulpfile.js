@@ -34,14 +34,14 @@ gulp.task("reload", () => {
   browserSync.reload({stream: true});
 })
 
-gulp.task('sass', () => {
-  return gulp.src('app/sass/**/*+(.sass|.scss)')
-      .pipe(sass().on("error", notify.onError()))
-      .pipe(gulp.dest('app/less'))
-      .pipe(browserSync.reload({stream: true}));
-});
+// gulp.task('sass', () => {
+//   return gulp.src('app/sass/**/*+(.sass|.scss)')
+//       .pipe(sass().on("error", notify.onError()))
+//       .pipe(gulp.dest('app/less'))
+//       .pipe(browserSync.reload({stream: true}));
+// });
 
-gulp.task('less', ['sass'], () => {
+gulp.task('less', /*['sass'],*/ () => {
   // return gulp.src('app/less/**/*.less')
   return gulp.src('app/less/styles.less')
     .pipe(less({
@@ -56,14 +56,14 @@ gulp.task('less', ['sass'], () => {
 
 gulp.task("default", ["less", 'build-all', "start-server"], () => {
   // gulp.watch('app/css/**/*.css', ['build-css', "reload"]);
-  gulp.watch('app/less/**/*.less', ["less", 'build-css', "reload"]);
+  gulp.watch('app/less/**/*.less', ["less", /*'build-css',*/ "reload"]);
+  // gulp.watch('app/sass/**/*.sass', ["less", /*'build-css',*/ "reload"]);
   gulp.watch('app/js/**/*.js', ['watch-js','build-js'/*, "reload"*/]);
   gulp.watch('app/**/*.html', ['build-html', browserSync.reload]);
   gulp.watch('app/libs/**/*', ['build-libs', "reload"]);
   gulp.watch('app/assets/**/*', ['build-imgs', "reload"]);
 
 })
-
 
 ///build
 gulp.task('build-html', function(){

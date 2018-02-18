@@ -10,15 +10,19 @@ exports.request = function(link, renderCallback, fetchOptions) {
   }
 
   let requestObj = (fetchOptions) ? new Request(url, fetchOptions) : new Request(url);
-  fetch(requestObj)
+  return fetch(requestObj)
     .then(res => {
-      res.json().then(response => {
-        // console.log(response)
-        if(renderCallback) {
-          renderCallback(response)
-        }
-      });
+      if (!res.ok) {
+        throw new Error(res.statusText)
+      }
+      return res.json()
     })
+      .then(response => {               //
+        console.log(response)           //
+        if(renderCallback) {            //
+          renderCallback(response)      //
+        }                               //
+    })                                  //
     .catch(error => {
       console.log(error);
   });

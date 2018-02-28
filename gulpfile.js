@@ -26,6 +26,7 @@ var gulp        = require('gulp'),
     
 gulp.task("start-server", () => {
   browserSync({
+    port : 3200,
     server: {baseDir: "dist"},
     notify: true});
 });
@@ -132,12 +133,12 @@ function bundle() {
     .on('error', function(err) { console.log('Error: ' + err.message); })
     .pipe(source(config.outputFile))
     .pipe(buffer()) // convert from streaming to buffered vinyl file object
-    .pipe(uglify()) // (required babelify@6.3.0) now gulp-uglify works 
+    // .pipe(uglify()) // (required babelify@6.3.0) now gulp-uglify works 
     .pipe(gulp.dest(config.outputDir))
     .pipe(browserSync.reload({stream: true}));
 }
 
-gulp.task('build-persistent', ['clean'], function() {
+gulp.task('build-persistent', /*['clean'],*/ function() {
   return bundle();
 });
 gulp.task('build-js', ['build-persistent'], function() {

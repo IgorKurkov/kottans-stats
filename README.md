@@ -24,7 +24,11 @@ If you want to start it with gulp - type `npm install`, and then `gulp` - you mu
 
 - [x] made full refactoring to modular project
 - [x] connect to own REST API backend (node + mongo)
-- [ ] implement filters, sorts, search
-- [ ] calendar and some new graphs
-- [ ] save filtered content as .md
+
+**version 3**
+
+- [x] implement filters, sorts, full text search (backend REST + frontend)
+- [x] calendar with counts of messages per day, autofilter by click any date, and some new graphs
+- [x] save, done filtered messages as tasks in "favorites" dashboard
+- [x] tiny auth for saving favorites per particular user email
 

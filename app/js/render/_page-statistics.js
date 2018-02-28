@@ -1,38 +1,34 @@
 const config = require("../_config");
-const request = require('../_request');
 const sel = require('../plugins/_selectors');
-
-
-
+import { request as getMessages } from "../_request-new";
 
 exports.insertValuesToFeaturesCards = function() {
   // feature 1
-  request.request('count', (data) => {
+  getMessages('count').then((data) => {
     sel.blocks.messagesCount.innerHTML = data;
   });
 
   // feature 2
-  request.request("https://api.github.com/repos/kottans/frontend", (data) => {
+  getMessages("https://api.github.com/repos/kottans/frontend").then((data) => {
     sel.blocks.starredRepo.innerHTML = (data.stargazers_count == undefined) ? "..." : data.stargazers_count;
   });
 
   // feature 3
-  request.request("authors", (data) => {
-    sel.blocks.activeUsersCount.innerHTML = data;
+  getMessages("authors").then((data) => {
+    sel.blocks.activeUsersCount.innerHTML = data.length;
   });
 
   // feature 4
-  request.request("https://api.github.com/search/issues?q=+type:pr+user:kottans&sort=created&%E2%80%8C%E2%80%8Border=asc", (data) => {
+  getMessages("https://api.github.com/search/issues?q=+type:pr+user:kottans&sort=created&%E2%80%8C%E2%80%8Border=asc").then((data) => {
     var pullNumber = data.items.find((item) => {return item.repository_url == "https://api.github.com/repos/kottans/mock-repo";});
     document.getElementsByClassName("pull-requests")[0].innerHTML = pullNumber.number;
   });
 
   // feature 5
-  request.request("learners", (data) => {
+  getMessages("learners").then((data) => {
     sel.blocks.blockLearners.innerHTML = data.length;
   });
 }
-
 
 exports.drawCountOfTasksPerUser_VerticalBar = function(users) {
   let graphArr = users.map(function(user) {
@@ -53,7 +49,7 @@ exports.drawCountOfTasksPerUser_VerticalBar = function(users) {
     title: 'Sum of finished tasks by each learner',
     // width: ($(window).width() < 800) ? $(window).width() : $(window).width()*0.5,
     width: $(window).width(),
-    height: $(window).height()*0.45,
+    height: $(window).height()*0.3,
     hAxis: {
       slantedText:true,
       slantedTextAngle:90,        
@@ -72,8 +68,6 @@ exports.drawCountOfTasksPerUser_VerticalBar = function(users) {
 
 
 ////////////////////
-
-
 exports.drawActivity_LineChart = function(activityArr) {
   activityArr.map(function(day) {
     day[0] = new Date(day[0]);
@@ -95,7 +89,7 @@ exports.drawActivity_LineChart = function(activityArr) {
       //curveType: 'function',
       // width: ($(window).width() < 800) ? $(window).width() : $(window).width()*0.5,
       width: $(window).width(), 
-      height: $(window).height()*0.45,
+      height: $(window).height()*0.3,
       hAxis: {
         slantedText:true,
         slantedTextAngle:45,

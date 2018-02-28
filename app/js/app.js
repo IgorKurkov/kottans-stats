@@ -1,4 +1,5 @@
 const countdown      = require("./plugins/_countdown");
+// const request        = require('./_request');
 const pageStatistics = require("./render/_page-statistics");
 const pageTimeline   = require("./render/_page-timeline");
 const pageSearch     = require("./render/_page-search");
@@ -25,8 +26,8 @@ function init() {
   getMessages("activity").then(pageStatistics.drawActivity_LineChart);
 
   //Page filters
-  let currentDate = (new Date().toLocaleDateString().substring(0, 10).split('-').join('.'));
-  // console.log(currentDate)
+  let currentDate = (new Date().toISOString().substring(0, 10).split('-').join('.'));
+  // console.log(new Date())
   getMessages("perdate", currentDate).then(data => filtersPage.drawMessages(data, currentDate));
   getMessages("byDay").then(filtersPage.drawCalendar);
 

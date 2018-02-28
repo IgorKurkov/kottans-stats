@@ -5,6 +5,7 @@
 @import 'pages/_finished';
 @import 'pages/_statistics';
 @import 'pages/_filters';
+@import 'pages/_popups';
 
 @import (less) '_table.css';
 
@@ -24,5 +25,32 @@ body {
   margin-right: 2px;
 }
 
+.signup {
+  display: none;
+  position: absolute;
+  width: 30%;
+  // height: 100px;
+  background-color: rgb(45, 101, 223);
+  color: white;
+  top: 50%;
+  left: 50%;
+  padding: 30px;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  border-radius: 4px;
+  border: 1px solid #dddddd;
+  .controls-wrapper{
+
+    text-align: center;
+    margin: 0 auto;
+    .mdl-inputs;
+  }
+}
+.display-sign-block {
+  display: block;
+}
+.hide-sigh-block {
+  display: none;
+}
 
 @import '_media';

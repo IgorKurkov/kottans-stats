@@ -1,22 +1,24 @@
 .search-input {
-  // background-image: url('/css/searchicon.png'); /* Add a search icon to input */
-  // background-position: 10px 12px; /* Position the search icon */
-  // background-repeat: no-repeat; /* Do not repeat the icon image */
   width: 100%; /* Full-width */
-  font-size: 18px; /* Increase font-size */
+  font-size: 14px; /* Increase font-size */
+  font-weight: bold;
+  text-transform: uppercase;
   padding: 12px 20px 12px 20px; /* Add some padding */
-  // margin: 0 10px;
   border: 1px solid #ddd; /* Add a grey border */
   margin-bottom: 5px; /* Add some space below the input */
   text-align: center;
-
 }
 
 
 //colorize mixin
 .colorize(@n, @i: 0) when (@i =< @n) {
   .day-block-@{i} {
-    background: hsl(100 - (110 / @n)*@i, 100%, 50%);
+    background: hsl(105 - (120 / @n)*@i, 80%, 60%);
+    opacity: ((4/@n) * (@i * 2));
+    color: black;
+    &:hover {
+      opacity: 1;
+    }
   }
   .colorize(@n, (@i + 1));
 }
@@ -24,5 +26,237 @@
 .colorize(100);
 
 .day-block-110 {  
-  background-color: #f20018;
+  background-color: #ec0018;
+}
+
+
+
+.scroll-bars {
+  ::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    border-radius: 5px;
+    background-color: #F5F5F5;
+  }
+
+::-webkit-scrollbar
+  {
+    width: 5px !important;
+    background-color: #F5F5F5;
+  }
+
+::-webkit-scrollbar-thumb
+  {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: rgb(114, 114, 114);
+  }
+}
+.scroll-bars;
+
+
+
+.mdl-inputs {
+  .mdl-textfield__input {
+    font-size: 1.4em;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    
+  }
+  .mdl-textfield__label {
+    text-align: center;
+    color:  rgba(0, 0, 0, 0.7);
+    &:focus {
+      color: black;
+    }
+  }
+}
+
+//styles for messages containers in filters page and favorites page
+.messages-container-styles {
+  transition: opacity .1s ease-in;
+  margin: 0 auto;
+  position: absolute;
+  bottom:0px;
+  top: 35px;
+  overflow:auto;
+  width: 100%;
+
+    .day-title{
+      font-size: 1.2em;
+      text-align: center;
+      user-select: none;
+      padding: 10px;
+      background-color: darken(rgb(242, 244, 253), 5%);
+    }
+    .message-wrapper{
+      min-height: 60px;
+      cursor: default;
+      border: 1px solid lighten(#ccc, 8%);
+      padding: 10px;
+      margin: 10px;
+      border-radius: 3px;
+      position: relative;
+
+      .message-date-sent{
+        user-select: none;
+        cursor: pointer;
+        position: absolute;
+        font-weight: bold;
+        opacity: .5;
+        top: 10px;
+        right: 40px;
+        // transition: .3s ease;
+        &:hover{
+          opacity: 1;
+        }
+        &:active {
+          color: rgb(255, 0, 0);
+        }
+      }
+      .message-avatar{
+        width: 30px;
+        position: relative;
+        .avatar{
+          width: 30px;
+          height: 30px;
+          border-radius: 15%;
+          margin: 5px;
+          float: left;
+        }
+      }
+      .tooltip {
+        position: relative;
+        a {
+          font-size: 1em;
+          color: darken(#ccc, 20%);
+          font-weight: bold;
+          text-decoration: none;
+          &:hover{
+            color: black;
+          }
+        }
+        .tooltiptext {
+          position: relative;
+          height: 140px;
+          width: 320px;
+          opacity: 0;
+          border: 1px solid #ccc;
+          background-color: #fff;
+          box-shadow: 10px 5px 10px 5px rgba(0,0,0,0.15);
+          border-radius:5px;
+          transition: .5s ease;
+          text-align: center;
+          border-radius: 6px;
+          padding: 5px 0;
+          position: absolute;
+          z-index: -99999;
+          left: 40px;
+          .tooltip-avatar {
+            width: 130px;
+            height: 130px;
+
+            float: left;
+            margin: 5px;
+            border: 5px;
+          }
+
+          a.title {
+            cursor: pointer;
+            font-size: 1.5em;
+            float: left;
+            margin: 10px;
+          }
+          a.mdl-button {
+            position: absolute;
+            bottom: 12px;
+            left: 150px;
+
+          }
+        }
+      
+        &:hover .tooltiptext {
+          z-index: 99999;
+          transition: .5s ease;
+          opacity: 1;
+        }
+      }
+      .text-wrapper {
+        display: block;
+        .message-username {
+          user-select: none;
+          cursor: pointer;
+          margin-top: 5px;
+          // font-size: 1em;
+          color: darken(#ccc, 20%);
+          font-weight: bold;
+          text-decoration: none;
+          &:hover{
+            color: black;
+          }
+          &:active {
+            color: red;
+          }
+        }
+        .hide-button{
+          display: none;
+        }
+        .add-to-favorites-button:before {
+          content: "\f067";
+        }
+        .del-from-favorites-button:before {
+          content: "\f014";
+        }
+        .check-favorites-button:before {
+          content: "\f096";
+        }
+        .done-favorites-button:before {
+          content: "\f046";
+        }
+        .add-to-favorites-button, .del-from-favorites-button, .check-favorites-button, .done-favorites-button  {
+          outline: none;
+          font-size: 20px;
+          font-weight: bold;
+          position: absolute;
+          right: 3px;
+          top: 7px;
+          color: rgb(141, 141, 141);
+          background-color: transparent;
+          border: none;
+          text-transform: uppercase;
+          cursor: pointer;
+          &:hover:before {
+            color: darken(#ccc, 40%);
+          }
+          &:active {
+            color: black;
+            font-weight: bold;
+          }
+          .done-favorites-button :hover, .done-favorites-button:active {
+            color: rgb(141, 141, 141);
+          }
+          &:before {
+            font-family: FontAwesome;
+            &:hover {
+              color: darken(#ccc, 40%);
+            }
+          }
+        }
+        .check-favorites-button, .done-favorites-button {
+          left: 16px;
+          top: 50px;
+        }
+        .message-markup{
+          overflow-x: auto;
+          a:hover {
+            color: darken(#FF4081, 20%);
+          }
+          a:active {
+            color: darken(#FF4081, 40%);
+          }
+        }
+      }
+    }
 }

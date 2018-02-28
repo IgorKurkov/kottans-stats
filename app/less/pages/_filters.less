@@ -1,5 +1,5 @@
 @import '_mixins';
-
+@import '../inc/_toggles';
 
 #scroll-tab-4 {
   .page-content {
@@ -9,75 +9,95 @@
       display: flex;
       justify-content: space-around;
       align-items: stretch;
-      &-by-name {
-        .search-input;
-      }
-      &-by-wtwr {
-        .search-input;  
-      }
-      &-reset {
-        .search-input;  
-      }
-    }
-    .scroll-wrapper{
-      position: relative;
-      width: 100%;
-      height: 50px;
-      margin-bottom: 5px;
-      //https://css-tricks.com/creating-responsive-touch-friendly-carousels-with-flickity/
-      //https://codepen.io/desandro/pen/zxRYGo
-      .carousel-cell {
-        position: relative;
-        width: 50px;
-        height: 50px;
-        margin-right: 5px;
-        background: #B8CAFF;
-        border-radius: 5px;
-        color: white;
-        font-size: 30px; 
-        text-align: center;
-        display: block; 
-        span {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+      .mdl-textfield {
+        width: 100%;
+        margin: 0 20px;
+        padding: 20px 0 10px 0;
+        label:after {
+          bottom: 10px;
         }
-        &:hover{
-          background: darken(#B8CAFF, 10%);
-        }
-        &:active{
-          background: darken(#B8CAFF, 20%);
-        }
+        .mdl-inputs;
       }
     }
 
     .filters-main-content{
+      padding: 0 5px;
       display: flex;
       justify-content: space-around;
-      height: calc(100vh - 25%);
+      // height: calc(100vh - 21%);
       position: relative;
       .left-sidebar {
+        .mdl-textfield {
+          padding: 10px 0 10px 0;
+          label:after {
+            bottom: 10px;
+          }
+        }
         box-shadow: 0px 10px 25px 5px rgba(0,0,0,0.15);
         width: 25%;
-        min-height: 100%;
-
+        // min-height: 100%;
+        .close, .open{
+          display: none;
+        }
+        .checkbox-block {
+          font-weight: bold;
+          text-transform: uppercase;
+          text-align: center;
+          .mdl-switch {
+            // display: inline;
+            margin-bottom: 10px;
+            width: 60%;
+          }
+        }
         .button-filters {
+          .mdl-inputs;
           text-align: center;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-wrap: wrap;
-
+          .filters-title{
+            margin: 10px 0 0 0;
+            text-transform: uppercase;
+          }
           .filter-button{
             width: 80%;
             margin: 5px 10px ;
           }
         }
         .mini-calendar {
+          .zabuto_calendar{
+            .legend {
+              text-align: center;
+              span {
+                color: black;
+                font-size: 90%;
+              }
+            }
+            .calendar-month-header span {
+              text-transform: uppercase;
+            }
+            .table tr.calendar-month-header td {
+              padding-top: 0px;
+            }
+            .table tr.calendar-month-header td span {
+              padding-bottom: 0px;
+            }
+            .fa {
+              font-size: 30px;
+              &:hover {
+                color: lighten(#000, 40%);
+              }
+              &:active {
+                color: lighten(red, 10%);
+              }
+            }
+          }
           
-          
-          // color: white;
+          .calendar-month-header {
+            position: relative;
+            height: 100%;
+          }
           user-select: none;
           td div.day {
             z-index: -999;
@@ -92,87 +112,62 @@
           .badge-today {
             padding: 5px;
             border-radius: 50%;
+            }
           }
-          }
-
         }
       }
       .messages-wrapper {
         width: 45%;
         position:relative;
-      }
-      .center-messages-content {
+        overflow-x: hidden; 
         box-shadow: 0px 10px 25px 5px rgba(0,0,0,0.15);
-        margin: 0 auto;
-        position: absolute;
-        bottom:0px;
-        top:0px;
-        overflow:auto;
-        details.day-wrapper{
-          background-color: white;
-          margin: 10px;
-          border-radius: 4px;
-          cursor: pointer;
-
-          summary.day-title{
-            user-select: none;
-            padding: 10px;
-            background-color: rgb(242, 244, 253);
-            text-transform: uppercase;
-            &:hover{
-              background-color: darken(rgb(242, 244, 253), 5%);
-            }
-            &:active{
-              background-color: darken(rgb(242, 244, 253), 10%);
-            }
-          }
-          .message-wrapper{
-            cursor: default;
-            background-color: lighten(rgb(248, 223, 223), 1%);
-            padding: 10px;
-            margin: 10px;
-            border-radius: 8px;
-            position: relative;
-
-            .message-date-sent{
-              position: absolute;
-            
-              top: 10px;
-              right: 10px;
-            }
-            .message-avatar{
-              position: relative;
-              img{
-                width: 30px;
-              }
-            }
-            &--markup{
-              
-            }
-          }
+        .center-messages-content {
+          .messages-container-styles;
+          top: 0px;
         }
       }
+
+
+      
       .right-sidebar{
         box-shadow: 0px 10px 25px 5px rgba(0,0,0,0.15);
         width: 25%;
-        min-height: 100%;
-        .chart-count-mess-per-user{
-  
-        }
-        .summary-per-media {
-          .summary-links-count{
-  
+        padding: 10px;
+        .favorites-wrapper {
+          text-align: center;
+          margin-bottom: 20px;
+          .favorites-title {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1;
+            letter-spacing: .02em;
           }
-          .summary-videos-count{
-  
+          a {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1;
+            letter-spacing: .02em;
+            &:hover {
+              color: darken(red, 5%);
+              cursor: pointer;
+            }
+            &:active {
+              color: darken(red, 15%);
+            }
           }
         }
-        .chart-count-mension-per-user{
+        .filters-title{
+          margin: 0 0 10px 0;
+          text-align: center;
+          text-transform: uppercase;
+        }
+        .total-block {
           
         }
+        
+
       }
     }
-    
   }
 }
 
@@ -180,25 +175,52 @@
 
 
 
+
 @media screen and (max-width: 768px) {
-  .left-sidebar {
-    margin-left:-250px;
+  #scroll-tab-4 .page-content .filters-main-content .left-sidebar {
+    background: white !important;
+    width: 100%;
+    margin-left:-100%;
     height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
+    // width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    top: 80px; /* Stay at the top */
     left: 0;
     background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    // overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 80px; /* Place content 60px from the top */
+    transition: 0.2s; /* 0.5 second transition effect to slide in the sidenav */
+    .filters-title {
+      display: none;
+    }
     .closebtn {
+      display: block;
+      font-size: 1.3em;
+      // margin-left: 50px;
+      background-color: white;
+      
+      border: none;
+      border-radius: 3px;
       position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
+    }
+    .open {
+      border: 1px solid #ccc;
+      padding: 15px;
+      top: 95px;
+      right: -120px;
+      &:hover {
+        background-color: #ccc;
+      }
+    }
+    .close {
+      display: none;
+      padding: 10px;
+      top: 40px;
+      right: 30px;
+      &:hover {
+        background-color: #ccc;
+      }
     }
   }
   .right-sidebar {

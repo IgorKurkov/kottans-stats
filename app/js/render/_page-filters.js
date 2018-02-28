@@ -518,13 +518,13 @@ exports.renderTotalMediaSummaryBlock = () => {
     totalDays.innerHTML = `<b>${Math.floor(data.length/30)} months & ${data.length % 30} days</b>`;
   });
   getMessages("search", 'http').then(data => {
-    totalLinks.innerHTML = `<b>${data.length}</b> links`;
+    totalLinks.innerHTML = `<b>${data.length}</b> references`;
   });
   getMessages("search", '.youtube').then(data => {
     totalVideos.innerHTML = `<b>${data.length}</b> videos`;
   });
   getMessages("search", '.github').then(data => {
-    totalGithub.innerHTML = `<b>${data.length}</b> videos`;
+    totalGithub.innerHTML = `<b>${data.length}</b> links to github`;
   });
   getMessages("search", 'http img').then(data => {
     totalImages.innerHTML = `<b>${data.length}</b> screenshots`;
@@ -533,6 +533,6 @@ exports.renderTotalMediaSummaryBlock = () => {
     totalmentions.innerHTML = `<b>${data.length}</b> mentions`;
   });
   getMessages("finishedByTasks").then((data, html) => {
-    totalFinishedTasks.innerHTML = `<b>${data.length}</b> finished tasks`;
+    totalFinishedTasks.innerHTML = `<b>${data.length}</b> ready tasks`;
   });
 }

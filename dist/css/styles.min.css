@@ -1,0 +1,2333 @@
+/* -- import Roboto Font ---------------------------- */
+@import "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,cyrillic";
+.mdl-layout__container {
+  top: 0;
+}
+.mdl-layout__header-row {
+  height: 56px;
+  padding: 0 16px 0 45px;
+}
+.mdl-layout__tab-bar-button {
+  width: 0px;
+}
+.mdl-layout__drawer > .mdl-layout-title {
+  text-align: center;
+}
+.mdl-layout__drawer > .mdl-layout-title,
+.mdl-layout-title {
+  padding-left: 0px;
+  font-family: 'Inconsolata', monospace;
+}
+.mdl-navigation__link:hover {
+  color: #f0e8e8;
+}
+.kitty-wiggle-full {
+  background-image: url(../assets/kitty-wiggle-full.gif);
+  background-size: cover;
+  width: 100vw;
+  height: 40vw;
+  background-position: center;
+  margin: 0 auto;
+}
+.mdl-data-table td,
+.mdl-data-table th {
+  text-align: inherit;
+}
+.mdl-data-table td {
+  padding: 0 5px;
+}
+.avatar {
+  height: 100px;
+  width: 100px;
+  margin: 0 auto 2em;
+}
+.avatar-img {
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+  /* border-radius: 50%; */
+}
+.features {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.features-item {
+  border: 2px solid rgba(220, 230, 235, 0.76);
+  padding: 20px;
+  position: relative;
+  width: 180px;
+  border-radius: 4px;
+  height: 75px;
+  text-align: right;
+}
+.features-item .count {
+  font-size: 35px;
+  float: right;
+  transition: color 2s ease 0s;
+}
+.features-item .text {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1.1em;
+}
+.features-item .description {
+  font-size: 0.8em;
+}
+.features-item .icon img {
+  float: left;
+}
+a.started {
+  position: relative;
+  margin: 20px;
+  padding: 15px 40px;
+}
+button.started i {
+  position: absolute;
+  top: 30%;
+  right: 10px;
+  width: 40px;
+}
+#countdown-container {
+  width: 50%;
+  margin: 25px auto 10px;
+  text-align: center;
+  position: relative;
+}
+#countdown-container .countdown-description {
+  font-size: 30px;
+  text-transform: uppercase;
+  /* margin: 30px; */
+}
+/* charts */
+.search-input {
+  width: 100%;
+  /* Full-width */
+  font-size: 14px;
+  /* Increase font-size */
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 12px 20px 12px 20px;
+  /* Add some padding */
+  border: 1px solid #ddd;
+  /* Add a grey border */
+  margin-bottom: 5px;
+  /* Add some space below the input */
+  text-align: center;
+}
+.day-block-0 {
+  background: #70eb47;
+  opacity: 0;
+  color: black;
+}
+.day-block-0:hover {
+  opacity: 1;
+}
+.day-block-1 {
+  background: #73eb47;
+  opacity: 0.08;
+  color: black;
+}
+.day-block-1:hover {
+  opacity: 1;
+}
+.day-block-2 {
+  background: #77eb47;
+  opacity: 0.16;
+  color: black;
+}
+.day-block-2:hover {
+  opacity: 1;
+}
+.day-block-3 {
+  background: #7aeb47;
+  opacity: 0.24;
+  color: black;
+}
+.day-block-3:hover {
+  opacity: 1;
+}
+.day-block-4 {
+  background: #7deb47;
+  opacity: 0.32;
+  color: black;
+}
+.day-block-4:hover {
+  opacity: 1;
+}
+.day-block-5 {
+  background: #81eb47;
+  opacity: 0.4;
+  color: black;
+}
+.day-block-5:hover {
+  opacity: 1;
+}
+.day-block-6 {
+  background: #84eb47;
+  opacity: 0.48;
+  color: black;
+}
+.day-block-6:hover {
+  opacity: 1;
+}
+.day-block-7 {
+  background: #87eb47;
+  opacity: 0.56;
+  color: black;
+}
+.day-block-7:hover {
+  opacity: 1;
+}
+.day-block-8 {
+  background: #8aeb47;
+  opacity: 0.64;
+  color: black;
+}
+.day-block-8:hover {
+  opacity: 1;
+}
+.day-block-9 {
+  background: #8eeb47;
+  opacity: 0.72;
+  color: black;
+}
+.day-block-9:hover {
+  opacity: 1;
+}
+.day-block-10 {
+  background: #91eb47;
+  opacity: 0.8;
+  color: black;
+}
+.day-block-10:hover {
+  opacity: 1;
+}
+.day-block-11 {
+  background: #94eb47;
+  opacity: 0.88;
+  color: black;
+}
+.day-block-11:hover {
+  opacity: 1;
+}
+.day-block-12 {
+  background: #97eb47;
+  opacity: 0.96;
+  color: black;
+}
+.day-block-12:hover {
+  opacity: 1;
+}
+.day-block-13 {
+  background: #9beb47;
+  opacity: 1.04;
+  color: black;
+}
+.day-block-13:hover {
+  opacity: 1;
+}
+.day-block-14 {
+  background: #9eeb47;
+  opacity: 1.12;
+  color: black;
+}
+.day-block-14:hover {
+  opacity: 1;
+}
+.day-block-15 {
+  background: #a1eb47;
+  opacity: 1.2;
+  color: black;
+}
+.day-block-15:hover {
+  opacity: 1;
+}
+.day-block-16 {
+  background: #a4eb47;
+  opacity: 1.28;
+  color: black;
+}
+.day-block-16:hover {
+  opacity: 1;
+}
+.day-block-17 {
+  background: #a8eb47;
+  opacity: 1.36;
+  color: black;
+}
+.day-block-17:hover {
+  opacity: 1;
+}
+.day-block-18 {
+  background: #abeb47;
+  opacity: 1.44;
+  color: black;
+}
+.day-block-18:hover {
+  opacity: 1;
+}
+.day-block-19 {
+  background: #aeeb47;
+  opacity: 1.52;
+  color: black;
+}
+.day-block-19:hover {
+  opacity: 1;
+}
+.day-block-20 {
+  background: #b1eb47;
+  opacity: 1.6;
+  color: black;
+}
+.day-block-20:hover {
+  opacity: 1;
+}
+.day-block-21 {
+  background: #b5eb47;
+  opacity: 1.68;
+  color: black;
+}
+.day-block-21:hover {
+  opacity: 1;
+}
+.day-block-22 {
+  background: #b8eb47;
+  opacity: 1.76;
+  color: black;
+}
+.day-block-22:hover {
+  opacity: 1;
+}
+.day-block-23 {
+  background: #bbeb47;
+  opacity: 1.84;
+  color: black;
+}
+.day-block-23:hover {
+  opacity: 1;
+}
+.day-block-24 {
+  background: #bfeb47;
+  opacity: 1.92;
+  color: black;
+}
+.day-block-24:hover {
+  opacity: 1;
+}
+.day-block-25 {
+  background: #c2eb47;
+  opacity: 2;
+  color: black;
+}
+.day-block-25:hover {
+  opacity: 1;
+}
+.day-block-26 {
+  background: #c5eb47;
+  opacity: 2.08;
+  color: black;
+}
+.day-block-26:hover {
+  opacity: 1;
+}
+.day-block-27 {
+  background: #c8eb47;
+  opacity: 2.16;
+  color: black;
+}
+.day-block-27:hover {
+  opacity: 1;
+}
+.day-block-28 {
+  background: #cceb47;
+  opacity: 2.24;
+  color: black;
+}
+.day-block-28:hover {
+  opacity: 1;
+}
+.day-block-29 {
+  background: #cfeb47;
+  opacity: 2.32;
+  color: black;
+}
+.day-block-29:hover {
+  opacity: 1;
+}
+.day-block-30 {
+  background: #d2eb47;
+  opacity: 2.4;
+  color: black;
+}
+.day-block-30:hover {
+  opacity: 1;
+}
+.day-block-31 {
+  background: #d5eb47;
+  opacity: 2.48;
+  color: black;
+}
+.day-block-31:hover {
+  opacity: 1;
+}
+.day-block-32 {
+  background: #d9eb47;
+  opacity: 2.56;
+  color: black;
+}
+.day-block-32:hover {
+  opacity: 1;
+}
+.day-block-33 {
+  background: #dceb47;
+  opacity: 2.64;
+  color: black;
+}
+.day-block-33:hover {
+  opacity: 1;
+}
+.day-block-34 {
+  background: #dfeb47;
+  opacity: 2.72;
+  color: black;
+}
+.day-block-34:hover {
+  opacity: 1;
+}
+.day-block-35 {
+  background: #e2eb47;
+  opacity: 2.8;
+  color: black;
+}
+.day-block-35:hover {
+  opacity: 1;
+}
+.day-block-36 {
+  background: #e6eb47;
+  opacity: 2.88;
+  color: black;
+}
+.day-block-36:hover {
+  opacity: 1;
+}
+.day-block-37 {
+  background: #e9eb47;
+  opacity: 2.96;
+  color: black;
+}
+.day-block-37:hover {
+  opacity: 1;
+}
+.day-block-38 {
+  background: #ebe947;
+  opacity: 3.04;
+  color: black;
+}
+.day-block-38:hover {
+  opacity: 1;
+}
+.day-block-39 {
+  background: #ebe647;
+  opacity: 3.12;
+  color: black;
+}
+.day-block-39:hover {
+  opacity: 1;
+}
+.day-block-40 {
+  background: #ebe247;
+  opacity: 3.2;
+  color: black;
+}
+.day-block-40:hover {
+  opacity: 1;
+}
+.day-block-41 {
+  background: #ebdf47;
+  opacity: 3.28;
+  color: black;
+}
+.day-block-41:hover {
+  opacity: 1;
+}
+.day-block-42 {
+  background: #ebdc47;
+  opacity: 3.36;
+  color: black;
+}
+.day-block-42:hover {
+  opacity: 1;
+}
+.day-block-43 {
+  background: #ebd947;
+  opacity: 3.44;
+  color: black;
+}
+.day-block-43:hover {
+  opacity: 1;
+}
+.day-block-44 {
+  background: #ebd547;
+  opacity: 3.52;
+  color: black;
+}
+.day-block-44:hover {
+  opacity: 1;
+}
+.day-block-45 {
+  background: #ebd247;
+  opacity: 3.6;
+  color: black;
+}
+.day-block-45:hover {
+  opacity: 1;
+}
+.day-block-46 {
+  background: #ebcf47;
+  opacity: 3.68;
+  color: black;
+}
+.day-block-46:hover {
+  opacity: 1;
+}
+.day-block-47 {
+  background: #ebcc47;
+  opacity: 3.76;
+  color: black;
+}
+.day-block-47:hover {
+  opacity: 1;
+}
+.day-block-48 {
+  background: #ebc847;
+  opacity: 3.84;
+  color: black;
+}
+.day-block-48:hover {
+  opacity: 1;
+}
+.day-block-49 {
+  background: #ebc547;
+  opacity: 3.92;
+  color: black;
+}
+.day-block-49:hover {
+  opacity: 1;
+}
+.day-block-50 {
+  background: #ebc247;
+  opacity: 4;
+  color: black;
+}
+.day-block-50:hover {
+  opacity: 1;
+}
+.day-block-51 {
+  background: #ebbf47;
+  opacity: 4.08;
+  color: black;
+}
+.day-block-51:hover {
+  opacity: 1;
+}
+.day-block-52 {
+  background: #ebbb47;
+  opacity: 4.16;
+  color: black;
+}
+.day-block-52:hover {
+  opacity: 1;
+}
+.day-block-53 {
+  background: #ebb847;
+  opacity: 4.24;
+  color: black;
+}
+.day-block-53:hover {
+  opacity: 1;
+}
+.day-block-54 {
+  background: #ebb547;
+  opacity: 4.32;
+  color: black;
+}
+.day-block-54:hover {
+  opacity: 1;
+}
+.day-block-55 {
+  background: #ebb147;
+  opacity: 4.4;
+  color: black;
+}
+.day-block-55:hover {
+  opacity: 1;
+}
+.day-block-56 {
+  background: #ebae47;
+  opacity: 4.48;
+  color: black;
+}
+.day-block-56:hover {
+  opacity: 1;
+}
+.day-block-57 {
+  background: #ebab47;
+  opacity: 4.56;
+  color: black;
+}
+.day-block-57:hover {
+  opacity: 1;
+}
+.day-block-58 {
+  background: #eba847;
+  opacity: 4.64;
+  color: black;
+}
+.day-block-58:hover {
+  opacity: 1;
+}
+.day-block-59 {
+  background: #eba447;
+  opacity: 4.72;
+  color: black;
+}
+.day-block-59:hover {
+  opacity: 1;
+}
+.day-block-60 {
+  background: #eba147;
+  opacity: 4.8;
+  color: black;
+}
+.day-block-60:hover {
+  opacity: 1;
+}
+.day-block-61 {
+  background: #eb9e47;
+  opacity: 4.88;
+  color: black;
+}
+.day-block-61:hover {
+  opacity: 1;
+}
+.day-block-62 {
+  background: #eb9b47;
+  opacity: 4.96;
+  color: black;
+}
+.day-block-62:hover {
+  opacity: 1;
+}
+.day-block-63 {
+  background: #eb9747;
+  opacity: 5.04;
+  color: black;
+}
+.day-block-63:hover {
+  opacity: 1;
+}
+.day-block-64 {
+  background: #eb9447;
+  opacity: 5.12;
+  color: black;
+}
+.day-block-64:hover {
+  opacity: 1;
+}
+.day-block-65 {
+  background: #eb9147;
+  opacity: 5.2;
+  color: black;
+}
+.day-block-65:hover {
+  opacity: 1;
+}
+.day-block-66 {
+  background: #eb8e47;
+  opacity: 5.28;
+  color: black;
+}
+.day-block-66:hover {
+  opacity: 1;
+}
+.day-block-67 {
+  background: #eb8a47;
+  opacity: 5.36;
+  color: black;
+}
+.day-block-67:hover {
+  opacity: 1;
+}
+.day-block-68 {
+  background: #eb8747;
+  opacity: 5.44;
+  color: black;
+}
+.day-block-68:hover {
+  opacity: 1;
+}
+.day-block-69 {
+  background: #eb8447;
+  opacity: 5.52;
+  color: black;
+}
+.day-block-69:hover {
+  opacity: 1;
+}
+.day-block-70 {
+  background: #eb8147;
+  opacity: 5.6;
+  color: black;
+}
+.day-block-70:hover {
+  opacity: 1;
+}
+.day-block-71 {
+  background: #eb7d47;
+  opacity: 5.68;
+  color: black;
+}
+.day-block-71:hover {
+  opacity: 1;
+}
+.day-block-72 {
+  background: #eb7a47;
+  opacity: 5.76;
+  color: black;
+}
+.day-block-72:hover {
+  opacity: 1;
+}
+.day-block-73 {
+  background: #eb7747;
+  opacity: 5.84;
+  color: black;
+}
+.day-block-73:hover {
+  opacity: 1;
+}
+.day-block-74 {
+  background: #eb7347;
+  opacity: 5.92;
+  color: black;
+}
+.day-block-74:hover {
+  opacity: 1;
+}
+.day-block-75 {
+  background: #eb7047;
+  opacity: 6;
+  color: black;
+}
+.day-block-75:hover {
+  opacity: 1;
+}
+.day-block-76 {
+  background: #eb6d47;
+  opacity: 6.08;
+  color: black;
+}
+.day-block-76:hover {
+  opacity: 1;
+}
+.day-block-77 {
+  background: #eb6a47;
+  opacity: 6.16;
+  color: black;
+}
+.day-block-77:hover {
+  opacity: 1;
+}
+.day-block-78 {
+  background: #eb6647;
+  opacity: 6.24;
+  color: black;
+}
+.day-block-78:hover {
+  opacity: 1;
+}
+.day-block-79 {
+  background: #eb6347;
+  opacity: 6.32;
+  color: black;
+}
+.day-block-79:hover {
+  opacity: 1;
+}
+.day-block-80 {
+  background: #eb6047;
+  opacity: 6.4;
+  color: black;
+}
+.day-block-80:hover {
+  opacity: 1;
+}
+.day-block-81 {
+  background: #eb5d47;
+  opacity: 6.48;
+  color: black;
+}
+.day-block-81:hover {
+  opacity: 1;
+}
+.day-block-82 {
+  background: #eb5947;
+  opacity: 6.56;
+  color: black;
+}
+.day-block-82:hover {
+  opacity: 1;
+}
+.day-block-83 {
+  background: #eb5647;
+  opacity: 6.64;
+  color: black;
+}
+.day-block-83:hover {
+  opacity: 1;
+}
+.day-block-84 {
+  background: #eb5347;
+  opacity: 6.72;
+  color: black;
+}
+.day-block-84:hover {
+  opacity: 1;
+}
+.day-block-85 {
+  background: #eb5047;
+  opacity: 6.8;
+  color: black;
+}
+.day-block-85:hover {
+  opacity: 1;
+}
+.day-block-86 {
+  background: #eb4c47;
+  opacity: 6.88;
+  color: black;
+}
+.day-block-86:hover {
+  opacity: 1;
+}
+.day-block-87 {
+  background: #eb4947;
+  opacity: 6.96;
+  color: black;
+}
+.day-block-87:hover {
+  opacity: 1;
+}
+.day-block-88 {
+  background: #eb4749;
+  opacity: 7.04;
+  color: black;
+}
+.day-block-88:hover {
+  opacity: 1;
+}
+.day-block-89 {
+  background: #eb474c;
+  opacity: 7.12;
+  color: black;
+}
+.day-block-89:hover {
+  opacity: 1;
+}
+.day-block-90 {
+  background: #eb4750;
+  opacity: 7.2;
+  color: black;
+}
+.day-block-90:hover {
+  opacity: 1;
+}
+.day-block-91 {
+  background: #eb4753;
+  opacity: 7.28;
+  color: black;
+}
+.day-block-91:hover {
+  opacity: 1;
+}
+.day-block-92 {
+  background: #eb4756;
+  opacity: 7.36;
+  color: black;
+}
+.day-block-92:hover {
+  opacity: 1;
+}
+.day-block-93 {
+  background: #eb4759;
+  opacity: 7.44;
+  color: black;
+}
+.day-block-93:hover {
+  opacity: 1;
+}
+.day-block-94 {
+  background: #eb475d;
+  opacity: 7.52;
+  color: black;
+}
+.day-block-94:hover {
+  opacity: 1;
+}
+.day-block-95 {
+  background: #eb4760;
+  opacity: 7.6;
+  color: black;
+}
+.day-block-95:hover {
+  opacity: 1;
+}
+.day-block-96 {
+  background: #eb4763;
+  opacity: 7.68;
+  color: black;
+}
+.day-block-96:hover {
+  opacity: 1;
+}
+.day-block-97 {
+  background: #eb4766;
+  opacity: 7.76;
+  color: black;
+}
+.day-block-97:hover {
+  opacity: 1;
+}
+.day-block-98 {
+  background: #eb476a;
+  opacity: 7.84;
+  color: black;
+}
+.day-block-98:hover {
+  opacity: 1;
+}
+.day-block-99 {
+  background: #eb476d;
+  opacity: 7.92;
+  color: black;
+}
+.day-block-99:hover {
+  opacity: 1;
+}
+.day-block-100 {
+  background: #eb4770;
+  opacity: 8;
+  color: black;
+}
+.day-block-100:hover {
+  opacity: 1;
+}
+.day-block-110 {
+  background-color: #ec0018;
+}
+.scroll-bars ::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #F5F5F5;
+}
+.scroll-bars ::-webkit-scrollbar {
+  width: 5px !important;
+  background-color: #F5F5F5;
+}
+.scroll-bars ::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #727272;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #F5F5F5;
+}
+::-webkit-scrollbar {
+  width: 5px !important;
+  background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #727272;
+}
+.mdl-inputs .mdl-textfield__input {
+  font-size: 1.4em;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.mdl-inputs .mdl-textfield__label {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+}
+.mdl-inputs .mdl-textfield__label:focus {
+  color: black;
+}
+.messages-container-styles {
+  transition: opacity 0.1s ease-in;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0px;
+  top: 35px;
+  overflow: auto;
+  width: 100%;
+}
+.messages-container-styles .day-title {
+  font-size: 1.2em;
+  text-align: center;
+  user-select: none;
+  padding: 10px;
+  background-color: #dce1fa;
+}
+.messages-container-styles .message-wrapper {
+  min-height: 60px;
+  cursor: default;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 3px;
+  position: relative;
+}
+.messages-container-styles .message-wrapper .message-date-sent {
+  user-select: none;
+  cursor: pointer;
+  position: absolute;
+  font-weight: bold;
+  opacity: .5;
+  top: 10px;
+  right: 40px;
+}
+.messages-container-styles .message-wrapper .message-date-sent:hover {
+  opacity: 1;
+}
+.messages-container-styles .message-wrapper .message-date-sent:active {
+  color: #ff0000;
+}
+.messages-container-styles .message-wrapper .message-avatar {
+  width: 30px;
+  position: relative;
+}
+.messages-container-styles .message-wrapper .message-avatar .avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 15%;
+  margin: 5px;
+  float: left;
+}
+.messages-container-styles .message-wrapper .tooltip {
+  position: relative;
+}
+.messages-container-styles .message-wrapper .tooltip a {
+  font-size: 1em;
+  color: #999999;
+  font-weight: bold;
+  text-decoration: none;
+}
+.messages-container-styles .message-wrapper .tooltip a:hover {
+  color: black;
+}
+.messages-container-styles .message-wrapper .tooltip .tooltiptext {
+  position: relative;
+  height: 140px;
+  width: 320px;
+  opacity: 0;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  transition: .5s ease;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: -99999;
+  left: 40px;
+}
+.messages-container-styles .message-wrapper .tooltip .tooltiptext .tooltip-avatar {
+  width: 130px;
+  height: 130px;
+  float: left;
+  margin: 5px;
+  border: 5px;
+}
+.messages-container-styles .message-wrapper .tooltip .tooltiptext a.title {
+  cursor: pointer;
+  font-size: 1.5em;
+  float: left;
+  margin: 10px;
+}
+.messages-container-styles .message-wrapper .tooltip .tooltiptext a.mdl-button {
+  position: absolute;
+  bottom: 12px;
+  left: 150px;
+}
+.messages-container-styles .message-wrapper .tooltip:hover .tooltiptext {
+  z-index: 99999;
+  transition: .5s ease;
+  opacity: 1;
+}
+.messages-container-styles .message-wrapper .text-wrapper {
+  display: block;
+}
+.messages-container-styles .message-wrapper .text-wrapper .message-username {
+  user-select: none;
+  cursor: pointer;
+  margin-top: 5px;
+  color: #999999;
+  font-weight: bold;
+  text-decoration: none;
+}
+.messages-container-styles .message-wrapper .text-wrapper .message-username:hover {
+  color: black;
+}
+.messages-container-styles .message-wrapper .text-wrapper .message-username:active {
+  color: red;
+}
+.messages-container-styles .message-wrapper .text-wrapper .hide-button {
+  display: none;
+}
+.messages-container-styles .message-wrapper .text-wrapper .add-to-favorites-button:before {
+  content: "\f067";
+}
+.messages-container-styles .message-wrapper .text-wrapper .del-from-favorites-button:before {
+  content: "\f014";
+}
+.messages-container-styles .message-wrapper .text-wrapper .check-favorites-button:before {
+  content: "\f096";
+}
+.messages-container-styles .message-wrapper .text-wrapper .done-favorites-button:before {
+  content: "\f046";
+}
+.messages-container-styles .message-wrapper .text-wrapper .add-to-favorites-button,
+.messages-container-styles .message-wrapper .text-wrapper .del-from-favorites-button,
+.messages-container-styles .message-wrapper .text-wrapper .check-favorites-button,
+.messages-container-styles .message-wrapper .text-wrapper .done-favorites-button {
+  outline: none;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  right: 3px;
+  top: 7px;
+  color: #8d8d8d;
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.messages-container-styles .message-wrapper .text-wrapper .add-to-favorites-button:hover:before,
+.messages-container-styles .message-wrapper .text-wrapper .del-from-favorites-button:hover:before,
+.messages-container-styles .message-wrapper .text-wrapper .check-favorites-button:hover:before,
+.messages-container-styles .message-wrapper .text-wrapper .done-favorites-button:hover:before {
+  color: #666666;
+}
+.messages-container-styles .message-wrapper .text-wrapper .add-to-favorites-button:active,
+.messages-container-styles .message-wrapper .text-wrapper .del-from-favorites-button:active,
+.messages-container-styles .message-wrapper .text-wrapper .check-favorites-button:active,
+.messages-container-styles .message-wrapper .text-wrapper .done-favorites-button:active {
+  color: black;
+  font-weight: bold;
+}
+.messages-container-styles .message-wrapper .text-wrapper .add-to-favorites-button .done-favorites-button :hover,
+.messages-container-styles .message-wrapper .text-wrapper .del-from-favorites-button .done-favorites-button :hover,
+.messages-container-styles .message-wrapper .text-wrapper .check-favorites-button .done-favorites-button :hover,
+.messages-container-styles .message-wrapper .text-wrapper .done-favorites-button .done-favorites-button :hover,
+.messages-container-styles .message-wrapper .text-wrapper .add-to-favorites-button .done-favorites-button:active,
+.messages-container-styles .message-wrapper .text-wrapper .del-from-favorites-button .done-favorites-button:active,
+.messages-container-styles .message-wrapper .text-wrapper .check-favorites-button .done-favorites-button:active,
+.messages-container-styles .message-wrapper .text-wrapper .done-favorites-button .done-favorites-button:active {
+  color: #8d8d8d;
+}
+.messages-container-styles .message-wrapper .text-wrapper .add-to-favorites-button:before,
+.messages-container-styles .message-wrapper .text-wrapper .del-from-favorites-button:before,
+.messages-container-styles .message-wrapper .text-wrapper .check-favorites-button:before,
+.messages-container-styles .message-wrapper .text-wrapper .done-favorites-button:before {
+  font-family: FontAwesome;
+}
+.messages-container-styles .message-wrapper .text-wrapper .add-to-favorites-button:before:hover,
+.messages-container-styles .message-wrapper .text-wrapper .del-from-favorites-button:before:hover,
+.messages-container-styles .message-wrapper .text-wrapper .check-favorites-button:before:hover,
+.messages-container-styles .message-wrapper .text-wrapper .done-favorites-button:before:hover {
+  color: #666666;
+}
+.messages-container-styles .message-wrapper .text-wrapper .check-favorites-button,
+.messages-container-styles .message-wrapper .text-wrapper .done-favorites-button {
+  left: 16px;
+  top: 50px;
+}
+.messages-container-styles .message-wrapper .text-wrapper .message-markup {
+  overflow-x: auto;
+}
+.messages-container-styles .message-wrapper .text-wrapper .message-markup a:hover {
+  color: #d9004a;
+}
+.messages-container-styles .message-wrapper .text-wrapper .message-markup a:active {
+  color: #730027;
+}
+#controls {
+  width: 100%;
+  margin: 10px 0;
+}
+#controls .fa {
+  font-size: 20px;
+  left: 10px;
+  position: absolute;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 80%;
+  height: 30px;
+}
+.switch input {
+  display: none;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ff4081;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  display: none;
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #2ab934;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+/*------ ADDED CSS ---------*/
+.on,
+.off {
+  display: block;
+  color: white;
+  position: relative;
+  top: 20%;
+  font-weight: bold;
+}
+/*--------- END --------*/
+/* Rounded sliders */
+.slider.round {
+  border-radius: 2px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+#scroll-tab-4 .page-content {
+  width: 100%;
+  position: relative;
+}
+#scroll-tab-4 .page-content .search {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+}
+#scroll-tab-4 .page-content .search .mdl-textfield {
+  width: 100%;
+  margin: 0 20px;
+  padding: 20px 0 10px 0;
+}
+#scroll-tab-4 .page-content .search .mdl-textfield label:after {
+  bottom: 10px;
+}
+#scroll-tab-4 .page-content .search .mdl-textfield .mdl-textfield__input {
+  font-size: 1.4em;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+#scroll-tab-4 .page-content .search .mdl-textfield .mdl-textfield__label {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+}
+#scroll-tab-4 .page-content .search .mdl-textfield .mdl-textfield__label:focus {
+  color: black;
+}
+#scroll-tab-4 .page-content .filters-main-content {
+  padding: 0 5px;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar {
+  box-shadow: 0px 10px 25px 5px rgba(0, 0, 0, 0.15);
+  width: 25%;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .mdl-textfield {
+  padding: 10px 0 10px 0;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .mdl-textfield label:after {
+  bottom: 10px;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .close,
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .open {
+  display: none;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .checkbox-block {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .checkbox-block .mdl-switch {
+  margin-bottom: 10px;
+  width: 60%;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .button-filters {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .button-filters .mdl-textfield__input {
+  font-size: 1.4em;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .button-filters .mdl-textfield__label {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .button-filters .mdl-textfield__label:focus {
+  color: black;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .button-filters .filters-title {
+  margin: 10px 0 0 0;
+  text-transform: uppercase;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .button-filters .filter-button {
+  width: 80%;
+  margin: 5px 10px ;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .mini-calendar {
+  user-select: none;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .mini-calendar .zabuto_calendar .legend {
+  text-align: center;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .mini-calendar .zabuto_calendar .legend span {
+  color: black;
+  font-size: 90%;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .mini-calendar .zabuto_calendar .calendar-month-header span {
+  text-transform: uppercase;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .mini-calendar .zabuto_calendar .table tr.calendar-month-header td {
+  padding-top: 0px;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .mini-calendar .zabuto_calendar .table tr.calendar-month-header td span {
+  padding-bottom: 0px;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .mini-calendar .zabuto_calendar .fa {
+  font-size: 30px;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .mini-calendar .zabuto_calendar .fa:hover {
+  color: #666666;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .mini-calendar .zabuto_calendar .fa:active {
+  color: #ff3333;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .mini-calendar .calendar-month-header {
+  position: relative;
+  height: 100%;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .mini-calendar td div.day {
+  z-index: -999;
+  font-size: 16px;
+  border-radius: 4px;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .mini-calendar td div.day:hover {
+  background-color: #b3b3b3;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .mini-calendar td div.day:active {
+  background-color: #999999;
+}
+#scroll-tab-4 .page-content .filters-main-content .left-sidebar .mini-calendar td div.day .badge-today {
+  padding: 5px;
+  border-radius: 50%;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper {
+  width: 45%;
+  position: relative;
+  overflow-x: hidden;
+  box-shadow: 0px 10px 25px 5px rgba(0, 0, 0, 0.15);
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content {
+  transition: opacity 0.1s ease-in;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0px;
+  top: 35px;
+  overflow: auto;
+  width: 100%;
+  top: 0px;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .day-title {
+  font-size: 1.2em;
+  text-align: center;
+  user-select: none;
+  padding: 10px;
+  background-color: #dce1fa;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper {
+  min-height: 60px;
+  cursor: default;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 3px;
+  position: relative;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .message-date-sent {
+  user-select: none;
+  cursor: pointer;
+  position: absolute;
+  font-weight: bold;
+  opacity: .5;
+  top: 10px;
+  right: 40px;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .message-date-sent:hover {
+  opacity: 1;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .message-date-sent:active {
+  color: #ff0000;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .message-avatar {
+  width: 30px;
+  position: relative;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .message-avatar .avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 15%;
+  margin: 5px;
+  float: left;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .tooltip {
+  position: relative;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .tooltip a {
+  font-size: 1em;
+  color: #999999;
+  font-weight: bold;
+  text-decoration: none;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .tooltip a:hover {
+  color: black;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .tooltip .tooltiptext {
+  position: relative;
+  height: 140px;
+  width: 320px;
+  opacity: 0;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  transition: .5s ease;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: -99999;
+  left: 40px;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .tooltip .tooltiptext .tooltip-avatar {
+  width: 130px;
+  height: 130px;
+  float: left;
+  margin: 5px;
+  border: 5px;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .tooltip .tooltiptext a.title {
+  cursor: pointer;
+  font-size: 1.5em;
+  float: left;
+  margin: 10px;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .tooltip .tooltiptext a.mdl-button {
+  position: absolute;
+  bottom: 12px;
+  left: 150px;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .tooltip:hover .tooltiptext {
+  z-index: 99999;
+  transition: .5s ease;
+  opacity: 1;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper {
+  display: block;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .message-username {
+  user-select: none;
+  cursor: pointer;
+  margin-top: 5px;
+  color: #999999;
+  font-weight: bold;
+  text-decoration: none;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .message-username:hover {
+  color: black;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .message-username:active {
+  color: red;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .hide-button {
+  display: none;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .add-to-favorites-button:before {
+  content: "\f067";
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .del-from-favorites-button:before {
+  content: "\f014";
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .check-favorites-button:before {
+  content: "\f096";
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .done-favorites-button:before {
+  content: "\f046";
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .add-to-favorites-button,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .del-from-favorites-button,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .check-favorites-button,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .done-favorites-button {
+  outline: none;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  right: 3px;
+  top: 7px;
+  color: #8d8d8d;
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .add-to-favorites-button:hover:before,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .del-from-favorites-button:hover:before,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .check-favorites-button:hover:before,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .done-favorites-button:hover:before {
+  color: #666666;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .add-to-favorites-button:active,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .del-from-favorites-button:active,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .check-favorites-button:active,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .done-favorites-button:active {
+  color: black;
+  font-weight: bold;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .add-to-favorites-button .done-favorites-button :hover,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .del-from-favorites-button .done-favorites-button :hover,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .check-favorites-button .done-favorites-button :hover,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .done-favorites-button .done-favorites-button :hover,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .add-to-favorites-button .done-favorites-button:active,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .del-from-favorites-button .done-favorites-button:active,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .check-favorites-button .done-favorites-button:active,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .done-favorites-button .done-favorites-button:active {
+  color: #8d8d8d;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .add-to-favorites-button:before,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .del-from-favorites-button:before,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .check-favorites-button:before,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .done-favorites-button:before {
+  font-family: FontAwesome;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .add-to-favorites-button:before:hover,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .del-from-favorites-button:before:hover,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .check-favorites-button:before:hover,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .done-favorites-button:before:hover {
+  color: #666666;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .check-favorites-button,
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .done-favorites-button {
+  left: 16px;
+  top: 50px;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .message-markup {
+  overflow-x: auto;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .message-markup a:hover {
+  color: #d9004a;
+}
+#scroll-tab-4 .page-content .filters-main-content .messages-wrapper .center-messages-content .message-wrapper .text-wrapper .message-markup a:active {
+  color: #730027;
+}
+#scroll-tab-4 .page-content .filters-main-content .right-sidebar {
+  box-shadow: 0px 10px 25px 5px rgba(0, 0, 0, 0.15);
+  width: 25%;
+  padding: 10px;
+}
+#scroll-tab-4 .page-content .filters-main-content .right-sidebar .favorites-wrapper {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#scroll-tab-4 .page-content .filters-main-content .right-sidebar .favorites-wrapper .favorites-title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .02em;
+}
+#scroll-tab-4 .page-content .filters-main-content .right-sidebar .favorites-wrapper a {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .02em;
+}
+#scroll-tab-4 .page-content .filters-main-content .right-sidebar .favorites-wrapper a:hover {
+  color: #e60000;
+  cursor: pointer;
+}
+#scroll-tab-4 .page-content .filters-main-content .right-sidebar .favorites-wrapper a:active {
+  color: #b30000;
+}
+#scroll-tab-4 .page-content .filters-main-content .right-sidebar .filters-title {
+  margin: 0 0 10px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 768px) {
+  #scroll-tab-4 .page-content .filters-main-content .left-sidebar {
+    background: white !important;
+    width: 100%;
+    margin-left: -100%;
+    height: 100%;
+    /* 100% Full-height */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 80px;
+    /* Stay at the top */
+    left: 0;
+    background-color: #111;
+    /* Black*/
+    padding-top: 80px;
+    /* Place content 60px from the top */
+    transition: 0.2s;
+    /* 0.5 second transition effect to slide in the sidenav */
+  }
+  #scroll-tab-4 .page-content .filters-main-content .left-sidebar .filters-title {
+    display: none;
+  }
+  #scroll-tab-4 .page-content .filters-main-content .left-sidebar .closebtn {
+    display: block;
+    font-size: 1.3em;
+    background-color: white;
+    border: none;
+    border-radius: 3px;
+    position: absolute;
+  }
+  #scroll-tab-4 .page-content .filters-main-content .left-sidebar .open {
+    border: 1px solid #ccc;
+    padding: 15px;
+    top: 95px;
+    right: -120px;
+  }
+  #scroll-tab-4 .page-content .filters-main-content .left-sidebar .open:hover {
+    background-color: #ccc;
+  }
+  #scroll-tab-4 .page-content .filters-main-content .left-sidebar .close {
+    display: none;
+    padding: 10px;
+    top: 40px;
+    right: 30px;
+  }
+  #scroll-tab-4 .page-content .filters-main-content .left-sidebar .close:hover {
+    background-color: #ccc;
+  }
+  .right-sidebar {
+    display: none;
+  }
+  #scroll-tab-4 .page-content .filters-main-content .messages-wrapper {
+    width: 100%;
+  }
+}
+.favorites-section {
+  display: none;
+  width: 95%;
+  background-color: #f5f4f4;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  min-height: 75%;
+  z-index: 99998;
+  justify-content: space-between;
+  border-radius: 4px;
+  border: 1px solid #d9d9d9;
+  padding: 20px;
+  -webkit-box-shadow: 1px 2px 36px 7px rgba(0, 0, 0, 0.64);
+  -moz-box-shadow: 1px 2px 36px 7px rgba(0, 0, 0, 0.64);
+  box-shadow: 1px 2px 36px 7px rgba(0, 0, 0, 0.64);
+}
+.favorites-section .close-favorites-window {
+  flex: none;
+  position: absolute;
+  right: -2px;
+  top: -2px;
+  border: 1px solid #143efb;
+  border-radius: 4px;
+  padding: 3px 7px;
+  background-color: #4667fc;
+  color: #fff;
+  font-weight: bold;
+}
+.favorites-section .close-favorites-window:hover {
+  background-color: #143efb;
+}
+.favorites-section .left-side,
+.favorites-section .right-side {
+  width: 49%;
+  border-radius: 4px;
+  border: 1px solid #d9d9d9;
+  position: relative;
+  overflow-x: hidden;
+  box-shadow: 0px 10px 25px 5px rgba(0, 0, 0, 0.15);
+}
+.favorites-section .left-side h5,
+.favorites-section .right-side h5 {
+  text-align: center;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+.favorites-section .left-side h4,
+.favorites-section .right-side h4 {
+  text-align: center;
+  margin-top: 200px;
+  text-transform: uppercase;
+}
+.favorites-section .left-side .saved-messages-container,
+.favorites-section .right-side .saved-messages-container {
+  transition: opacity 0.1s ease-in;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0px;
+  top: 35px;
+  overflow: auto;
+  width: 100%;
+}
+.favorites-section .left-side .saved-messages-container .day-title,
+.favorites-section .right-side .saved-messages-container .day-title {
+  font-size: 1.2em;
+  text-align: center;
+  user-select: none;
+  padding: 10px;
+  background-color: #dce1fa;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper,
+.favorites-section .right-side .saved-messages-container .message-wrapper {
+  min-height: 60px;
+  cursor: default;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 3px;
+  position: relative;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .message-date-sent,
+.favorites-section .right-side .saved-messages-container .message-wrapper .message-date-sent {
+  user-select: none;
+  cursor: pointer;
+  position: absolute;
+  font-weight: bold;
+  opacity: .5;
+  top: 10px;
+  right: 40px;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .message-date-sent:hover,
+.favorites-section .right-side .saved-messages-container .message-wrapper .message-date-sent:hover {
+  opacity: 1;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .message-date-sent:active,
+.favorites-section .right-side .saved-messages-container .message-wrapper .message-date-sent:active {
+  color: #ff0000;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .message-avatar,
+.favorites-section .right-side .saved-messages-container .message-wrapper .message-avatar {
+  width: 30px;
+  position: relative;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .message-avatar .avatar,
+.favorites-section .right-side .saved-messages-container .message-wrapper .message-avatar .avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 15%;
+  margin: 5px;
+  float: left;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .tooltip,
+.favorites-section .right-side .saved-messages-container .message-wrapper .tooltip {
+  position: relative;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .tooltip a,
+.favorites-section .right-side .saved-messages-container .message-wrapper .tooltip a {
+  font-size: 1em;
+  color: #999999;
+  font-weight: bold;
+  text-decoration: none;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .tooltip a:hover,
+.favorites-section .right-side .saved-messages-container .message-wrapper .tooltip a:hover {
+  color: black;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .tooltip .tooltiptext,
+.favorites-section .right-side .saved-messages-container .message-wrapper .tooltip .tooltiptext {
+  position: relative;
+  height: 140px;
+  width: 320px;
+  opacity: 0;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  transition: .5s ease;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: -99999;
+  left: 40px;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .tooltip .tooltiptext .tooltip-avatar,
+.favorites-section .right-side .saved-messages-container .message-wrapper .tooltip .tooltiptext .tooltip-avatar {
+  width: 130px;
+  height: 130px;
+  float: left;
+  margin: 5px;
+  border: 5px;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .tooltip .tooltiptext a.title,
+.favorites-section .right-side .saved-messages-container .message-wrapper .tooltip .tooltiptext a.title {
+  cursor: pointer;
+  font-size: 1.5em;
+  float: left;
+  margin: 10px;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .tooltip .tooltiptext a.mdl-button,
+.favorites-section .right-side .saved-messages-container .message-wrapper .tooltip .tooltiptext a.mdl-button {
+  position: absolute;
+  bottom: 12px;
+  left: 150px;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .tooltip:hover .tooltiptext,
+.favorites-section .right-side .saved-messages-container .message-wrapper .tooltip:hover .tooltiptext {
+  z-index: 99999;
+  transition: .5s ease;
+  opacity: 1;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper {
+  display: block;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .message-username,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .message-username {
+  user-select: none;
+  cursor: pointer;
+  margin-top: 5px;
+  color: #999999;
+  font-weight: bold;
+  text-decoration: none;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .message-username:hover,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .message-username:hover {
+  color: black;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .message-username:active,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .message-username:active {
+  color: red;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .hide-button,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .hide-button {
+  display: none;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:before,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:before {
+  content: "\f067";
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:before,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:before {
+  content: "\f014";
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .check-favorites-button:before,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .check-favorites-button:before {
+  content: "\f096";
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .done-favorites-button:before,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .done-favorites-button:before {
+  content: "\f046";
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .add-to-favorites-button,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .add-to-favorites-button,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .del-from-favorites-button,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .del-from-favorites-button,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .check-favorites-button,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .check-favorites-button,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .done-favorites-button,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .done-favorites-button {
+  outline: none;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  right: 3px;
+  top: 7px;
+  color: #8d8d8d;
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:hover:before,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:hover:before,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:hover:before,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:hover:before,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .check-favorites-button:hover:before,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .check-favorites-button:hover:before,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .done-favorites-button:hover:before,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .done-favorites-button:hover:before {
+  color: #666666;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:active,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:active,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:active,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:active,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .check-favorites-button:active,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .check-favorites-button:active,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .done-favorites-button:active,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .done-favorites-button:active {
+  color: black;
+  font-weight: bold;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .add-to-favorites-button .done-favorites-button :hover,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .add-to-favorites-button .done-favorites-button :hover,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .del-from-favorites-button .done-favorites-button :hover,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .del-from-favorites-button .done-favorites-button :hover,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .check-favorites-button .done-favorites-button :hover,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .check-favorites-button .done-favorites-button :hover,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .done-favorites-button .done-favorites-button :hover,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .done-favorites-button .done-favorites-button :hover,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .add-to-favorites-button .done-favorites-button:active,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .add-to-favorites-button .done-favorites-button:active,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .del-from-favorites-button .done-favorites-button:active,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .del-from-favorites-button .done-favorites-button:active,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .check-favorites-button .done-favorites-button:active,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .check-favorites-button .done-favorites-button:active,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .done-favorites-button .done-favorites-button:active,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .done-favorites-button .done-favorites-button:active {
+  color: #8d8d8d;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:before,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:before,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:before,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:before,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .check-favorites-button:before,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .check-favorites-button:before,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .done-favorites-button:before,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .done-favorites-button:before {
+  font-family: FontAwesome;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:before:hover,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:before:hover,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:before:hover,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:before:hover,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .check-favorites-button:before:hover,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .check-favorites-button:before:hover,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .done-favorites-button:before:hover,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .done-favorites-button:before:hover {
+  color: #666666;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .check-favorites-button,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .check-favorites-button,
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .done-favorites-button,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .done-favorites-button {
+  left: 16px;
+  top: 50px;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .message-markup,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .message-markup {
+  overflow-x: auto;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .message-markup a:hover,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .message-markup a:hover {
+  color: #d9004a;
+}
+.favorites-section .left-side .saved-messages-container .message-wrapper .text-wrapper .message-markup a:active,
+.favorites-section .right-side .saved-messages-container .message-wrapper .text-wrapper .message-markup a:active {
+  color: #730027;
+}
+.favorites-section .left-side .done-messages-container,
+.favorites-section .right-side .done-messages-container {
+  transition: opacity 0.1s ease-in;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0px;
+  top: 35px;
+  overflow: auto;
+  width: 100%;
+}
+.favorites-section .left-side .done-messages-container .day-title,
+.favorites-section .right-side .done-messages-container .day-title {
+  font-size: 1.2em;
+  text-align: center;
+  user-select: none;
+  padding: 10px;
+  background-color: #dce1fa;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper,
+.favorites-section .right-side .done-messages-container .message-wrapper {
+  min-height: 60px;
+  cursor: default;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 3px;
+  position: relative;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .message-date-sent,
+.favorites-section .right-side .done-messages-container .message-wrapper .message-date-sent {
+  user-select: none;
+  cursor: pointer;
+  position: absolute;
+  font-weight: bold;
+  opacity: .5;
+  top: 10px;
+  right: 40px;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .message-date-sent:hover,
+.favorites-section .right-side .done-messages-container .message-wrapper .message-date-sent:hover {
+  opacity: 1;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .message-date-sent:active,
+.favorites-section .right-side .done-messages-container .message-wrapper .message-date-sent:active {
+  color: #ff0000;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .message-avatar,
+.favorites-section .right-side .done-messages-container .message-wrapper .message-avatar {
+  width: 30px;
+  position: relative;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .message-avatar .avatar,
+.favorites-section .right-side .done-messages-container .message-wrapper .message-avatar .avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 15%;
+  margin: 5px;
+  float: left;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .tooltip,
+.favorites-section .right-side .done-messages-container .message-wrapper .tooltip {
+  position: relative;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .tooltip a,
+.favorites-section .right-side .done-messages-container .message-wrapper .tooltip a {
+  font-size: 1em;
+  color: #999999;
+  font-weight: bold;
+  text-decoration: none;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .tooltip a:hover,
+.favorites-section .right-side .done-messages-container .message-wrapper .tooltip a:hover {
+  color: black;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .tooltip .tooltiptext,
+.favorites-section .right-side .done-messages-container .message-wrapper .tooltip .tooltiptext {
+  position: relative;
+  height: 140px;
+  width: 320px;
+  opacity: 0;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  transition: .5s ease;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: -99999;
+  left: 40px;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .tooltip .tooltiptext .tooltip-avatar,
+.favorites-section .right-side .done-messages-container .message-wrapper .tooltip .tooltiptext .tooltip-avatar {
+  width: 130px;
+  height: 130px;
+  float: left;
+  margin: 5px;
+  border: 5px;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .tooltip .tooltiptext a.title,
+.favorites-section .right-side .done-messages-container .message-wrapper .tooltip .tooltiptext a.title {
+  cursor: pointer;
+  font-size: 1.5em;
+  float: left;
+  margin: 10px;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .tooltip .tooltiptext a.mdl-button,
+.favorites-section .right-side .done-messages-container .message-wrapper .tooltip .tooltiptext a.mdl-button {
+  position: absolute;
+  bottom: 12px;
+  left: 150px;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .tooltip:hover .tooltiptext,
+.favorites-section .right-side .done-messages-container .message-wrapper .tooltip:hover .tooltiptext {
+  z-index: 99999;
+  transition: .5s ease;
+  opacity: 1;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper {
+  display: block;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .message-username,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .message-username {
+  user-select: none;
+  cursor: pointer;
+  margin-top: 5px;
+  color: #999999;
+  font-weight: bold;
+  text-decoration: none;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .message-username:hover,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .message-username:hover {
+  color: black;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .message-username:active,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .message-username:active {
+  color: red;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .hide-button,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .hide-button {
+  display: none;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:before,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:before {
+  content: "\f067";
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:before,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:before {
+  content: "\f014";
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .check-favorites-button:before,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .check-favorites-button:before {
+  content: "\f096";
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .done-favorites-button:before,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .done-favorites-button:before {
+  content: "\f046";
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .add-to-favorites-button,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .add-to-favorites-button,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .del-from-favorites-button,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .del-from-favorites-button,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .check-favorites-button,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .check-favorites-button,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .done-favorites-button,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .done-favorites-button {
+  outline: none;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  right: 3px;
+  top: 7px;
+  color: #8d8d8d;
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:hover:before,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:hover:before,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:hover:before,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:hover:before,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .check-favorites-button:hover:before,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .check-favorites-button:hover:before,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .done-favorites-button:hover:before,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .done-favorites-button:hover:before {
+  color: #666666;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:active,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:active,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:active,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:active,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .check-favorites-button:active,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .check-favorites-button:active,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .done-favorites-button:active,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .done-favorites-button:active {
+  color: black;
+  font-weight: bold;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .add-to-favorites-button .done-favorites-button :hover,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .add-to-favorites-button .done-favorites-button :hover,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .del-from-favorites-button .done-favorites-button :hover,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .del-from-favorites-button .done-favorites-button :hover,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .check-favorites-button .done-favorites-button :hover,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .check-favorites-button .done-favorites-button :hover,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .done-favorites-button .done-favorites-button :hover,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .done-favorites-button .done-favorites-button :hover,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .add-to-favorites-button .done-favorites-button:active,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .add-to-favorites-button .done-favorites-button:active,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .del-from-favorites-button .done-favorites-button:active,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .del-from-favorites-button .done-favorites-button:active,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .check-favorites-button .done-favorites-button:active,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .check-favorites-button .done-favorites-button:active,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .done-favorites-button .done-favorites-button:active,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .done-favorites-button .done-favorites-button:active {
+  color: #8d8d8d;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:before,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:before,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:before,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:before,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .check-favorites-button:before,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .check-favorites-button:before,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .done-favorites-button:before,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .done-favorites-button:before {
+  font-family: FontAwesome;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:before:hover,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .add-to-favorites-button:before:hover,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:before:hover,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .del-from-favorites-button:before:hover,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .check-favorites-button:before:hover,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .check-favorites-button:before:hover,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .done-favorites-button:before:hover,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .done-favorites-button:before:hover {
+  color: #666666;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .check-favorites-button,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .check-favorites-button,
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .done-favorites-button,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .done-favorites-button {
+  left: 16px;
+  top: 50px;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .message-markup,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .message-markup {
+  overflow-x: auto;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .message-markup a:hover,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .message-markup a:hover {
+  color: #d9004a;
+}
+.favorites-section .left-side .done-messages-container .message-wrapper .text-wrapper .message-markup a:active,
+.favorites-section .right-side .done-messages-container .message-wrapper .text-wrapper .message-markup a:active {
+  color: #730027;
+}
+#myInput {
+  background-image: url('/css/searchicon.png');
+  /* Add a search icon to input */
+  background-position: 10px 12px;
+  /* Position the search icon */
+  background-repeat: no-repeat;
+  /* Do not repeat the icon image */
+  width: 100%;
+  /* Full-width */
+  font-size: 16px;
+  /* Increase font-size */
+  padding: 12px 20px 12px 40px;
+  /* Add some padding */
+  border: 1px solid #ddd;
+  /* Add a grey border */
+  margin-bottom: 12px;
+  /* Add some space below the input */
+}
+#myTable tr.header,
+#myTable tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+}
+body {
+  font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
+}
+.user-icon {
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.gitter-icon {
+  width: 25px;
+  margin-right: 2px;
+}
+.signup {
+  display: none;
+  position: absolute;
+  width: 30%;
+  background-color: #2d65df;
+  color: white;
+  top: 50%;
+  left: 50%;
+  padding: 30px;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  border-radius: 4px;
+  border: 1px solid #dddddd;
+}
+.signup .controls-wrapper {
+  text-align: center;
+  margin: 0 auto;
+}
+.signup .controls-wrapper .mdl-textfield__input {
+  font-size: 1.4em;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.signup .controls-wrapper .mdl-textfield__label {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+}
+.signup .controls-wrapper .mdl-textfield__label:focus {
+  color: black;
+}
+.display-sign-block {
+  display: block;
+}
+.hide-sigh-block {
+  display: none;
+}
+@media screen and (max-width: 1000px) {
+  .features-item {
+    background-color: lightgreen;
+    margin: 10px;
+    width: 30%;
+  }
+  .features {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 400px) {
+  #countdown-container {
+    width: 100%;
+  }
+  .features-item {
+    width: 100%;
+  }
+  .chart-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    /* height: 370px; */
+  }
+  .search {
+    flex-wrap: wrap;
+  }
+}

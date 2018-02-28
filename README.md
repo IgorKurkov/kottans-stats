@@ -1,4 +1,4 @@
-# kottans-stats v2
+# kottans-stats v3
 https://igorkurkov.github.io/kottans-stats/
 
 MDL SPA for tracking progress of users in course of kottans/frontend for awesome inspiring community =Kottans=

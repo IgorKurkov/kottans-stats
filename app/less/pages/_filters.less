@@ -12,7 +12,7 @@
       .mdl-textfield {
         width: 100%;
         margin: 0 20px;
-        padding: 20px 0 10px 0;
+        padding: 20px 0 10px 0;     
         label:after {
           bottom: 10px;
         }
@@ -29,6 +29,9 @@
       .left-sidebar {
         .mdl-textfield {
           padding: 10px 0 10px 0;
+          div.easy-autocomplete {
+            width: 100% !important;
+          }
           label:after {
             bottom: 10px;
           }
@@ -186,9 +189,9 @@
     margin-left:-100%;
     height: 100%; /* 100% Full-height */
     // width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
+    position: absolute; /* Stay in place */
     z-index: 1; /* Stay on top */
-    top: 80px; /* Stay at the top */
+    top: -100px; /* Stay at the top */
     left: 0;
     background-color: #111; /* Black*/
     // overflow-x: hidden; /* Disable horizontal scroll */
@@ -209,9 +212,9 @@
     }
     .open {
       border: 1px solid #ccc;
-      padding: 15px;
-      top: 95px;
-      right: -120px;
+      padding: 10px;
+      top: 150px;
+      right: -110px;
       &:hover {
         background-color: #ccc;
       }

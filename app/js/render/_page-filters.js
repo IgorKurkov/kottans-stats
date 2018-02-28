@@ -2,6 +2,8 @@ import { request as getMessages } from "../_request-new";
 
 const carousel = document.querySelector(".block-date-scroll");
 const mainMessagesContainer = document.querySelector(".center-messages-content");
+const mainMessagesWrapper = document.querySelector(".messages-wrapper");
+
 const mainSearchInput = document.querySelector(".search-by-wtwr");
 const usernameSearchInput = document.querySelector(".search-by-username");
 const usernameAutocompleteContainer = document.querySelector(".easy-autocomplete-container");
@@ -239,13 +241,10 @@ function myDateFunction(id, fromModal) {
   getMessages("perdate", date).then(data => drawMessages(data, date));
 }
 
-
-
 ////
 const leftSidebarOpen = document.querySelector(".open");
 const leftSidebarClose = document.querySelector(".close");
 const leftSidebar = document.querySelector(".left-sidebar");
-
 
 leftSidebarOpen.scrollTop = leftSidebarOpen.scrollHeight;
 leftSidebarOpen.addEventListener("click", () => {
@@ -253,6 +252,7 @@ leftSidebarOpen.addEventListener("click", () => {
 
     leftSidebar.style.marginLeft = "0px";
     leftSidebarOpen.style.display = "none";
+    mainMessagesWrapper.style.display = "none";
     leftSidebarClose.style.display = "block";
   }
 });
@@ -261,6 +261,7 @@ leftSidebarClose.addEventListener("click", () => {
   if(leftSidebar.style.marginLeft == "0px"){
     leftSidebar.style.marginLeft = "-100%";
     leftSidebarOpen.style.display = "block";
+    mainMessagesWrapper.style.display = "block";
   }
 });
 

@@ -1,9 +1,7 @@
 const config = require("../_config");
 const table = require("../plugins/_table");
 
-
-
-exports.insertTaskListToPage = function(finishedArr) {
+export const insertTaskListToPage = (finishedArr) => {
   var imageLogo = document.getElementById('main-logo');
   imageLogo.src = config.vars.kottansRoom.avatar;
   document.querySelector('#myInput').addEventListener('input', table.myFunction);
@@ -29,5 +27,5 @@ exports.insertTaskListToPage = function(finishedArr) {
           <td>${finishedArr[i].text} </td>
         </tr>`;
   }
-  divTable.innerHTML = html;
+divTable.innerHTML = html;
 }

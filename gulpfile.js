@@ -21,7 +21,8 @@ var gulp        = require('gulp'),
     reload      = browserSync.reload,
 
     change      = require('gulp-change'),
-    fileinclude    = require('gulp-file-include');
+    fileinclude = require('gulp-file-include'),
+    gulpSequence = require('gulp-sequence');
 //npm i --save-dev babel-core
     
 gulp.task("start-server", () => {
@@ -102,9 +103,10 @@ gulp.task('build-imgs', function() {
     });
 
 
-gulp.task('build-all', ['build-imgs', 'build-libs', 'build-html', 'build-css', 'build-js'], () => {
+// gulp.task('build-all', ['build-imgs', 'build-libs', 'build-html', 'build-css', 'build-js'], () => {
   
-});
+// });
+gulp.task('build-all',  gulpSequence('build-imgs', 'build-libs', 'build-html', 'build-css', 'build-js'));
 
 ////////=== transpile ==JS== modules to single js file  ===//////////
 //https://github.com/thoughtram/es6-babel-browserify-boilerplate

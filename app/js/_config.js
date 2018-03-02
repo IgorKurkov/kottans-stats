@@ -7,17 +7,3 @@ exports.vars = {
     avatar : "https://avatars-02.gitter.im/group/iv/3/57542d27c43b8c601977a0b6"
   }
 };
- 
-
-// var global = {
-//   tokenString : "access_token=" + "9e13190a6f70e28b6e263011e63d4b34d26bd697",
-//   roomUrlPrefix : "https://api.gitter.im/v1/rooms/"
-// };
-
-
-
-// function getAllRoomMessages(count, oldestId) {
-//   if(oldestId){oldestId = "&beforeId="+oldestId;} 
-//   return global.roomUrlPrefix + kottansRoom.id +
-//           "/chatMessages?limit="+ count + oldestId +"&" + global.tokenString;
-//   }; 

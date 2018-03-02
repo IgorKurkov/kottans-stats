@@ -24,6 +24,7 @@
     "gulp-notify": "^3.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
+    "gulp-sequence": "^1.0.0",
     "gulp-uglify": "^3.0.0",
     "lodash": "^4.17.5",
     "path": "^0.12.7",

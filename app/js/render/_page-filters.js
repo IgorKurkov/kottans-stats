@@ -15,12 +15,15 @@ const favoriteWindow = document.querySelector(".favorites-section");
 const savedContainer = document.querySelector(".saved-messages-container");
 const doneContainer = document.querySelector(".done-messages-container");
 const ENTER = 13;
+const leftSidebar = document.querySelector(".left-sidebar");
+const leftSidebarOpen = document.querySelector(".open");
+const leftSidebarClose = document.querySelector(".close");
 
 let allowTwitterPreview = false;
 let allowYoutubePreview = false;
 
 let userCredentials = JSON.parse(localStorage.getItem('favorites'));
-if(userCredentials && userCredentials.email){
+if(userCredentials && userCredentials.email) {
   let username = userCredentials.email.split('@')[0];
   favoritesBlockTitle.innerHTML = 
         `Hello ${username}! <a class="signout-button">Sign out!</a>`;
@@ -40,6 +43,31 @@ function formatDate(sent, splitter) {
     ("0" + sent.getMinutes()).slice(-2);
   return dateSentFormatted;
 }
+
+//init emoji formatter
+//https://github.com/iamcal/js-emoji
+let emoji = null;
+const callback = (value) => { emoji = value; };
+const initEmoji = (callback) => {
+  const emoji = new EmojiConvertor();
+  emoji.include_title = true;
+  const path = 'https://raw.githubusercontent.com/iamcal/emoji-data/master/img-apple-64/';
+  
+  fetch(path+'1f44d.png') //check if is connection to github online emoji
+  .then(response =>  {
+    if(response.ok) {
+      emoji.img_sets.apple.path = path;
+      callback(emoji);
+    } else {
+      emoji.use_sheet = true;
+      emoji.img_sets.apple.sheet = 'libs/js-emoji/sheet_apple_16.png';
+      callback(emoji);
+    }
+  });
+}
+
+initEmoji(callback);
+
 
 const twitterFormatter = (url) => {
   if(/twitter/ig.test(url)){
@@ -175,7 +203,7 @@ export const drawMessages = (data, postValue, container) => {
             </div>
           </div>`;
   });
-
+  html = emoji.replace_colons(html);
   messagesContainer.innerHTML = html;
   
   // INIT HIGHLIGHT.JS FOR CODE BLOCKS IN MESSAGES
@@ -184,6 +212,7 @@ export const drawMessages = (data, postValue, container) => {
       hljs.highlightBlock(block);
     });
   });
+
   messagesContainer.style.opacity = 1;
     }, 100);
 };
@@ -241,10 +270,6 @@ function myDateFunction(id, fromModal) {
   getMessages("perdate", date).then(data => drawMessages(data, date));
 }
 
-////
-const leftSidebarOpen = document.querySelector(".open");
-const leftSidebarClose = document.querySelector(".close");
-const leftSidebar = document.querySelector(".left-sidebar");
 
 leftSidebarOpen.scrollTop = leftSidebarOpen.scrollHeight;
 leftSidebarOpen.addEventListener("click", () => {
@@ -484,20 +509,20 @@ exports.drawPieChart = function(graphArr) {
   graphArr.length = 20;
   // console.log(graphArr)
   google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-          var data = google.visualization.arrayToDataTable(graphArr);
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable(graphArr);
 
-          var options = {
-            chartArea: { left: '-5%', top: '12%', width: "90%", height: "90%" },
-            title: 'Messaging activity',
-            pieHole: 0.4,
-          };
+      var options = {
+        chartArea: { left: '-5%', top: '12%', width: "90%", height: "90%" },
+        title: 'Messaging activity',
+        pieHole: 0.4,
+      };
 
-          var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-          chart.draw(data, options);
-        }
-    }
+      var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+      chart.draw(data, options);
+  }
+}
 
 
 //totalBlock

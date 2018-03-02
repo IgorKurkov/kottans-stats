@@ -1,2 +1,4 @@
 ☐ https://codepen.io/tutsplus/pen/RRVRro https://webdesign.tutsplus.com/tutorials/how-to-lazy-load-embedded-youtube-videos--cms-26743  lazy thumbnails for youtube for not load all preview iframe
 ☐ not wait when remove message from done favorites - and redraw containers earlier that in backend message was deleted - must add waiter - or promise with that than wait for successfully deleting result action
+☐ add Close button for email sign in popup
+✔ add emoji formatter for messages @done (2018-3-3 01:33:05)

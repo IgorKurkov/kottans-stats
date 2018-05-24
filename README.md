@@ -35,3 +35,4 @@ Link to REST API: [https://github.com/IgorKurkov/kottans-stats-backend](https://
 - [x] save, done filtered messages as tasks in "favorites" dashboard
 - [x] tiny auth for saving favorites per particular user email
 
+[![Kottans stats](https://img.youtube.com/vi/Z7XgONxOduA/0.jpg)](https://www.youtube.com/watch?v=Z7XgONxOduA "Kottans stats")

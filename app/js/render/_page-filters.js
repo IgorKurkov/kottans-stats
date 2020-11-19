@@ -221,13 +221,15 @@ export const drawCalendar = activityArr => {
   let buildedArr = [];
   // console.log(activityArr[0])
   activityArr.forEach(function(dayObj) {
-    let dateString = dayObj._id.split('.').join('-');
-    buildedArr.push({
-      date: dateString,
-      badge: false,
-      title: `${dayObj.count} messages`,
-      classname: `day-block-${dayObj.count > 100 ? 110 : dayObj.count}`
-    });
+    if (dayObj._id !== null) {
+      let dateString = dayObj._id.split('.').join('-');
+      buildedArr.push({
+        date: dateString,
+        badge: false,
+        title: `${dayObj.count} messages`,
+        classname: `day-block-${dayObj.count > 100 ? 110 : dayObj.count}`
+      });
+    }
   });
   // console.log(buildedArr)
   $(document).ready(function() {
@@ -253,7 +255,9 @@ export const drawCalendar = activityArr => {
         { type: "text", label: "more 100" }
       ],
       cell_border: true,
-      today: true,
+      year: 2018,
+      month  : 2, // Put the number of the month you want to start with
+      // today: true,
       nav_icon: {
         prev: '<i class="fa fa-chevron-circle-left"></i>',
         next: '<i class="fa fa-chevron-circle-right"></i>'

@@ -10,6 +10,7 @@ export const request = (link, postValue) => {
   // console.log(!!postValue)
   let requestObj = (!!postValue) ? new Request(url, options) : new Request(url);
 
+  requestObj.timeout = link === "latest" ? 5000 : 60000;
   return fetch(requestObj)
     .then(res => {
       if (!res.ok) {

@@ -4,7 +4,9 @@
   "description": "for fun and stats",
   "main": "codepen.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"npm run gulp",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npx npm-force-resolutions"
   },
   "author": "",
   "license": "ISC",
@@ -23,7 +25,7 @@
     "gulp-less": "^3.4.0",
     "gulp-notify": "^3.2.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^3.2.1",
     "gulp-sequence": "^1.0.0",
     "gulp-uglify": "^3.0.0",
     "lodash": "^4.17.5",
@@ -33,5 +35,11 @@
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "watchify": "^3.10.0"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
+  },
+  "dependencies": {
+    "gulp-autoprefixer": "^7.0.1"
   }
 }

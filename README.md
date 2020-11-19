@@ -36,3 +36,6 @@ Link to REST API: [https://github.com/IgorKurkov/kottans-stats-backend](https://
 - [x] tiny auth for saving favorites per particular user email
 
 [![Kottans stats](https://img.youtube.com/vi/Z7XgONxOduA/0.jpg)](https://www.youtube.com/watch?v=Z7XgONxOduA "Kottans stats")
+
+
+gh-pages push: `git push origin `git subtree split --prefix dist master`:gh-pages --force`

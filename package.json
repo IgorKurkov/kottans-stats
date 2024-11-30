@@ -13,7 +13,7 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babelify": "^6.3.0",
-    "browser-sync": "^2.18.13",
+    "browser-sync": "^2.27.11",
     "browserify": "^15.2.0",
     "fs": "0.0.1-security",
     "gulp": "^3.9.1",
